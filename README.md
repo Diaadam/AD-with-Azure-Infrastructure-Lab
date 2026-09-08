@@ -28,7 +28,7 @@ A repeatable Azure lab for designing and validating hybrid Active Directory infr
 
 ## Quick start
 
-```text
+```bash
 az login
 az account set --subscription <subscription-id>
 make init ENV=dev
@@ -38,7 +38,7 @@ make plan ENV=dev
 
 Apply only after reviewing the plan:
 
-```text
+```bash
 make apply ENV=dev
 ```
 
@@ -48,7 +48,7 @@ The default configuration creates a lab resource group and network. The compute 
 
 The checked-in `backend.tf` documents the Azure Storage remote backend. Supply backend configuration at initialization time, for example:
 
-```text
+```bash
 terraform -chdir=iac/terraform/environments/dev init \
   -backend-config="resource_group_name=<state-resource-group>" \
   -backend-config="storage_account_name=<state-storage-account>" \
@@ -60,7 +60,7 @@ Do not commit credentials, state files, plans, or SSH private keys.
 
 ## Common commands
 
-```text
+```bash
 make fmt
 make validate ENV=dev
 make plan ENV=dev
