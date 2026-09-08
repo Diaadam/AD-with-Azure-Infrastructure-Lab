@@ -5,7 +5,7 @@ A repeatable Azure lab for designing and validating hybrid Active Directory infr
 ## Definition of done
 
 - Terraform is formatted and validates for each environment.
-- A resource group, virtual network, subnet, NSG, and optional Linux utility VM can be planned from Terraform.
+- A resource group, virtual network, subnet, NSG, and optional Ubuntu Zabbix monitoring VM can be planned from Terraform.
 - Remote state configuration is documented and can be enabled without changing module code.
 - Architecture decisions and troubleshooting history are recorded.
 - CI runs formatting, validation, and security checks on pull requests.
@@ -42,7 +42,7 @@ Apply only after reviewing the plan:
 make apply ENV=dev
 ```
 
-The default configuration creates a lab resource group and network. The compute module is disabled by default until an SSH public key is supplied.
+The default configuration creates a lab resource group and network. The compute module is disabled by default until an SSH public key is supplied. The monitoring target is Zabbix Server on Ubuntu; Zabbix package installation, database setup, and agent enrollment remain a configuration step after the VM is provisioned.
 
 ## State
 
@@ -70,4 +70,4 @@ make lint
 make test
 ```
 
-This is a lab scaffold: domain controller promotion, DNS conditional forwarding, VPN/ExpressRoute, monitoring, and production policies are intentionally documented as follow-up work rather than silently implied by the base network.
+This is a lab scaffold: domain controller promotion, DNS conditional forwarding, VPN/ExpressRoute, Zabbix package/database configuration, Zabbix agent enrollment, and production policies are intentionally documented as follow-up work rather than silently implied by the base network.
