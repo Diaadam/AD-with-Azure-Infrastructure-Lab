@@ -6,7 +6,7 @@ resource "random_string" "backend_storage" {
 }
 
 locals {
-  naming_string = "str_acc_${random_string.backend_storage.result}"
+  naming_string = "dia${random_string.backend_storage.result}"
   common_tags = {
         environment = var.env
     }
@@ -15,7 +15,7 @@ locals {
 # Create resource group
 resource "azurerm_resource_group" "backend_storage" {
   name     = local.naming_string
-  location = "eastus"
+  location = "uaenorth"
   tags = local.common_tags
 }
 
