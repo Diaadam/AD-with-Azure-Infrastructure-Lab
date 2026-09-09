@@ -59,10 +59,10 @@ resource "azurerm_storage_account" "backend_storage" {
 
 # Create containers in the storage account
 resource "azurerm_storage_container" "backend_storage" {
-    name                  = "tfstate"
-    storage_account_name  = azurerm_storage_account.backend_storage.name
-    container_access_type = "private" # restrict public access (networking)
-
+  name                  = "tfstate"
+  storage_account_id    = azurerm_storage_account.backend_storage.id
+  container_access_type = "private" # restrict public access (networking)
+}
 
 
 ####################################################################
