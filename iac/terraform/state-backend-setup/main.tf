@@ -133,23 +133,9 @@ resource "azurerm_role_assignment" "backend_storage" {
 
   depends_on = [ azurerm_role_definition.backend_storage ] # custom RBAC
 }
-########################################################
-resource "terraform_data" "run_script" {
-  provisioner "local-exec" {
-    command = templatefile("${path.module}/tfbackend_generator.tpl", {
-      storage_account_name = azurerm_storage_account.backend_storage.name
-      container_name       = azurerm_storage_container.backend_storage.name
-      state_path            = local.state_path
-      client_id             = azuread_application.backend_storage.client_id
-      client_secret         = azuread_service_principal_password.backend_storage.value
-      tenant_id             = data.azuread_client_config.current.tenant_id
-      subscription_id       = data.azurerm_subscription.backend_storage.subscription_id
-    })
-
-    interpreter = ["PowerShell", "-Command"]
-  }
-
-  depends_on = [
-    azurerm_role_assignment.backend_storage
-  ]
-}
+# Grant your personal user account access to view and manage the state files
+# resource "azurerm_role_assignment" "user_storage_access" {
+#   scope                = azurerm_storage_account.backend_storage.id
+#   role_definition_name = "Storage Blob Data Contributor"
+#   principal_id         = data.azuread_client_config.current.object_id
+# }
