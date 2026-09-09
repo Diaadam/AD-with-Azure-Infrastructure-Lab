@@ -6,7 +6,7 @@ resource "random_string" "backend_storage" {
 }
 
 locals {
-  naming_string = "dia${random_string.backend_storage.result}"
+  naming_string = "backend_storage${random_string.backend_storage.result}"
   state_path = "${var.env}-tfstate"
   common_tags = {
         environment = var.env
