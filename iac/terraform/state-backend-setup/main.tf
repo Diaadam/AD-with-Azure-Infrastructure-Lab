@@ -28,7 +28,7 @@ resource "azurerm_storage_account" "backend_storage" {
   account_kind             = "StorageV2"
   account_replication_type = "LRS"
 
-  enable_https_traffic_only      = true
+  https_traffic_only_enabled      = true
   min_tls_version                = "TLS1_2"
   shared_access_key_enabled      = false # diable account keys and use sas
   default_to_oauth_authentication = true
