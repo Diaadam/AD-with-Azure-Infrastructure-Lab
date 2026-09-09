@@ -7,6 +7,7 @@ resource "random_string" "backend_storage" {
 
 locals {
   naming_string = "dia${random_string.backend_storage.result}"
+  state_path = "${var.env}-tfstate"
   common_tags = {
         environment = var.env
     }
@@ -124,7 +125,7 @@ resource "azurerm_role_assignment" "backend_storage" {
     # the folder the module in `state-backend-setup`
     condition = templatefile("${path.module}/condition.tpl", {
     container_name = azurerm_storage_container.backend_storage.name
-    state_path     = "${var.env}-tfstate"
+    state_path     = local.state_path
     })
 
   condition_version                = "2.0"

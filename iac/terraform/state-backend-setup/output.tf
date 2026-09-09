@@ -34,3 +34,7 @@ output "client_secret" {
 output "tenant_id" {
   value = data.azuread_client_config.current.tenant_id
 }
+
+output "state_path" {
+  value = local.state_path
+}
