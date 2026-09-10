@@ -49,17 +49,12 @@ variable "rules" {
       name                       = "test456"
       priority                   = 200
       direction                  = "Outbound"
-      access                     = "Deny"
-      protocol                   = "Udp"
+      access                     = "Allow"
+      protocol                   = "Tcp"
       source_port_range          = "*"
       destination_port_range     = "*"
       source_address_prefix      = "*"
       destination_address_prefix = "*"
     }
   }
-}
-
-##############
-variable "subnet_id" {
-  type = string
 }

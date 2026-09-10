@@ -14,19 +14,15 @@ variable "address_space" {
   type = list(string)
 }
 
-variable "subnet_name" {
-  type = string
+variable "subnets" {
+  type = map(
+          object({
+            subnet_name  = string
+            subnet_address_prefixes = list(string)
+          })
+        )
 }
-
-variable "subnet_address_prefixes" {
-  type = list(string)
-}
-
 variable "tags" {
   type    = map(string)
   default = {}
-}
-variable "tags" {
-	type    = map(string)
-	default = {}
 }

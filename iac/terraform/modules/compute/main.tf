@@ -10,7 +10,7 @@ resource "azurerm_virtual_machine" "this" {
   name                  = var.name                 
   location              = var.location             
   resource_group_name   = var.resource_group_name  
-  network_interface_ids = var.network_interface_ids
+  network_interface_ids = [azurerm_network_interface.this.id]
   vm_size               = var.size
  delete_os_disk_on_termination = true
 
@@ -37,7 +37,7 @@ resource "azurerm_virtual_machine" "this" {
   }
 
   os_profile_linux_config {
-    disable_password_authentication = var.enabled
+    disable_password_authentication = var.disable_password_authentication
 
     ssh_keys {
       key_data = file("${ssh_public_key_path}")
