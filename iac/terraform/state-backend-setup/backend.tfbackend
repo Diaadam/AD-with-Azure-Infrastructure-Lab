@@ -1,0 +1,7 @@
+storage_account_name = "dia2dfyjk"
+container_name       = "tfstate"
+key                  = "dev-tfstate/terraform.tfstate"
+client_id             = "2046017e-53ac-475d-b007-7f58cc67d241"
+client_secret         = "M8r8Q~6MWHy51ccGCiWRNX4UIKNN6r_jkZW4LaJE"
+tenant_id             = "a1c72832-46bf-44fd-b842-869604608221"
+subscription_id       = "23ec0b6c-6e31-4880-8f79-36caef8c448e"

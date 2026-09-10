@@ -1,6 +1,9 @@
 output "storage_account_name" {
   value = azurerm_storage_account.backend_storage.name
 }
+output "storage_account_id" {
+  value = azurerm_storage_account.backend_storage.id
+}
 
 output "storage_container_name" {
   value = azurerm_storage_container.backend_storage.name
@@ -30,4 +33,8 @@ output "client_secret" {
 
 output "tenant_id" {
   value = data.azuread_client_config.current.tenant_id
+}
+
+output "state_path" {
+  value = local.state_path
 }

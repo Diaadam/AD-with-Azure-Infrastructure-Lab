@@ -6,7 +6,8 @@ resource "random_string" "backend_storage" {
 }
 
 locals {
-  naming_string = "str_acc_${random_string.backend_storage.result}"
+  naming_string = "backendstorage${random_string.backend_storage.result}"
+  state_path = "${var.env}-tfstate"
   common_tags = {
         environment = var.env
     }
@@ -15,7 +16,7 @@ locals {
 # Create resource group
 resource "azurerm_resource_group" "backend_storage" {
   name     = local.naming_string
-  location = "eastus"
+  location = "uaenorth"
   tags = local.common_tags
 }
 
@@ -59,10 +60,10 @@ resource "azurerm_storage_account" "backend_storage" {
 
 # Create containers in the storage account
 resource "azurerm_storage_container" "backend_storage" {
-    name                  = "tfstate"
-    storage_account_name  = azurerm_storage_account.backend_storage.name
-    container_access_type = "private" # restrict public access (networking)
-
+  name                  = "tfstate"
+  storage_account_id    = azurerm_storage_account.backend_storage.id
+  container_access_type = "private" # restrict public access (networking)
+}
 
 
 ####################################################################
@@ -124,7 +125,7 @@ resource "azurerm_role_assignment" "backend_storage" {
     # the folder the module in `state-backend-setup`
     condition = templatefile("${path.module}/condition.tpl", {
     container_name = azurerm_storage_container.backend_storage.name
-    state_path     = "${var.env}-tfstate"
+    state_path     = local.state_path
     })
 
   condition_version                = "2.0"
@@ -132,3 +133,9 @@ resource "azurerm_role_assignment" "backend_storage" {
 
   depends_on = [ azurerm_role_definition.backend_storage ] # custom RBAC
 }
+# Grant your personal user account access to view and manage the state files
+# resource "azurerm_role_assignment" "user_storage_access" {
+#   scope                = azurerm_storage_account.backend_storage.id
+#   role_definition_name = "Storage Blob Data Contributor"
+#   principal_id         = data.azuread_client_config.current.object_id
+# }
