@@ -10,17 +10,17 @@ resource "azurerm_virtual_machine" "this" {
   name                  = var.name                 
   location              = var.location             
   resource_group_name   = var.resource_group_name  
-  network_interface_ids = var.network_interface_ids
+  network_interface_ids = [azurerm_network_interface.this.id]
   vm_size               = var.size
  delete_os_disk_on_termination = true
 
 
 
   storage_image_reference {
-    publisher = var.src_img_ref.image_publisher
-    offer     = var.src_img_ref.image_offer
-    sku       = var.src_img_ref.image_sku
-    version   = var.src_img_ref.image_version
+    publisher = var.src_img_ref.publisher
+    offer     = var.src_img_ref.offer
+    sku       = var.src_img_ref.sku
+    version   = var.src_img_ref.version
   }
   
   storage_os_disk {
@@ -30,18 +30,18 @@ resource "azurerm_virtual_machine" "this" {
     managed_disk_type = var.storage_os_disk.managed_disk_type
   }
   os_profile {
-    computer_name  = try(var.os_profile.computer_name ,"azvm-${random_string.this}")
+  computer_name = coalesce(var.os_profile.computer_name,"azvm-${random_string.this.result}")
     admin_username = var.os_profile.admin_username
     admin_password = var.os_profile.admin_password
     custom_data    = var.os_profile.custom_data
   }
 
   os_profile_linux_config {
-    disable_password_authentication = var.enabled
+    disable_password_authentication = var.disable_password_authentication
 
     ssh_keys {
-      key_data = file("${ssh_public_key_path}")
-      path     = "/home/testadmin/.ssh/authorized_keys"
+      key_data = file(var.ssh_public_key_path)
+      path     = "/home/azureadmin/.ssh/authorized_keys"
     }
   }
 

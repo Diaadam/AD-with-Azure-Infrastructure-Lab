@@ -1,3 +1,11 @@
 output "private_ip_address" {
-  value = try(azurerm_network_interface.this[0].private_ip_address, null)
+  value = azurerm_network_interface.this.private_ip_address
+}
+
+output "public_ip_address" {
+  value = azurerm_public_ip.this.ip_address
+}
+
+output "vm_name" {
+  value = azurerm_virtual_machine.this.name
 }

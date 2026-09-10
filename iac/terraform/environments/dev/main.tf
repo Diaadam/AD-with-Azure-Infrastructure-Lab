@@ -7,41 +7,50 @@ module "resource_group" {
 
 module "networking" {
   source                   = "../../modules/networking"
-  vnet_name                = var.vnet_name
-  location                 = var.location
   resource_group_name      = module.resource_group.name
-  address_space            = var.vnet_address_space
-  subnet_name              = var.subnet_name
-  subnet_address_prefixes  = var.subnet_address_prefixes
+  location                 = module.resource_group.location
+
+  for_each = var.Vnets
+  vnet_name                = each.value.vnet_name
+  address_space            = each.value.vnet_address_space
+  subnets                  = each.value.subnets 
   tags                     = var.tags
 }
 
 module "security" {
   source              = "../../modules/security"
-  name                = "${var.vnet_name}-nsg"
-  location            = var.location
-  resource_group_name = module.resource_group.name
-  security_rules      = var.security_rules
+  resource_group_name      = module.resource_group.name
+  location                 = module.resource_group.location
+
+  security_group_name     = var.security_group_name
+  rules               = var.rules
   tags                = var.tags
 }
 
 resource "azurerm_subnet_network_security_group_association" "workload" {
-  subnet_id                 = module.networking.subnet_id
+  subnet_id                 = module.networking["vnet1"].subnet_ids["subnet_1"]
   network_security_group_id = module.security.nsg_id
 }
 
 module "compute" {
   source               = "../../modules/compute"
-  enabled              = var.compute_enabled
+  disable_password_authentication              = var.disable_password_authentication
   name                 = var.compute_name
   location             = var.location
   resource_group_name  = module.resource_group.name
-  subnet_id            = module.networking.subnet_id
   size                 = var.compute_size
-  admin_username       = var.admin_username
-  admin_ssh_public_key = var.admin_ssh_public_key
+  os_profile           = var.os_profile
+  ssh_public_key_path = var.ssh_public_key_path
+  src_img_ref         = var.src_img_ref
+  storage_os_disk    = var.storage_os_disk
+  subnet_id         = module.networking["vnet1"].subnet_ids["subnet_1"]
+  public_ip         = "${var.compute_name}pip"
+  nic_name         = "${var.compute_name}nic"
+  tags = var.tags
 }
 
 output "resource_group_name" { value = module.resource_group.name }
-output "vnet_name" { value = module.networking.vnet_name }
+output "vnet_name" { value = module.networking["vnet1"].vnet_name }
+output "vm_name" { value = module.compute.vm_name }
 output "utility_vm_private_ip" { value = module.compute.private_ip_address }
+output "utility_vm_public_ip" { value = module.compute.public_ip_address }

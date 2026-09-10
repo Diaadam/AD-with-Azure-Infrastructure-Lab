@@ -1,6 +1,6 @@
-variable "enabled" {
+variable "disable_password_authentication" {
      type    = bool
-     description = "Whether to ssh."
+     description = "true to ssh."
      default = true
 }
 
@@ -74,9 +74,6 @@ variable "tags" {
   type = map(string)
 }
 ###################################################
-variable "network_interface_ids" {
-  type = list(string)
-}
 
 variable "subnet_id" {
      type = string
