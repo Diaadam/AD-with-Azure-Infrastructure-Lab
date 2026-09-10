@@ -11,9 +11,9 @@ module "networking" {
   location                 = module.resource_group.location
 
   for_each = var.Vnets
-  vnet_name                = for_each.value.vnet_name
-  address_space            = for_each.value.address_space
-  subnets                  = for_each.value.subnets 
+  vnet_name                = each.value.vnet_name
+  address_space            = each.value.vnet_address_space
+  subnets                  = each.value.subnets 
   tags                     = var.tags
 }
 
@@ -44,12 +44,12 @@ module "compute" {
   src_img_ref         = var.src_img_ref
   storage_os_disk    = var.storage_os_disk
   subnet_id         = module.networking["vnet1"].subnet_ids["subnet_1"]
-  public_ip         = "${module.compute.vm_name}pip"
-  nic_name         = "${module.compute.vm_name}nic"
+  public_ip         = "${var.compute_name}pip"
+  nic_name         = "${var.compute_name}nic"
   tags = var.tags
 }
 
 output "resource_group_name" { value = module.resource_group.name }
-output "vnet_name" { value = module.networking.vnet_name }
-output "vm_name" { value = module.networking.vm_name }
+output "vnet_name" { value = module.networking["vnet1"].vnet_name }
+output "vm_name" { value = module.compute.vm_name }
 output "utility_vm_private_ip" { value = module.compute.private_ip_address }

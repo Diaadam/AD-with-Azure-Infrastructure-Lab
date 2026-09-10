@@ -17,10 +17,10 @@ resource "azurerm_virtual_machine" "this" {
 
 
   storage_image_reference {
-    publisher = var.src_img_ref.image_publisher
-    offer     = var.src_img_ref.image_offer
-    sku       = var.src_img_ref.image_sku
-    version   = var.src_img_ref.image_version
+    publisher = var.src_img_ref.publisher
+    offer     = var.src_img_ref.offer
+    sku       = var.src_img_ref.sku
+    version   = var.src_img_ref.version
   }
   
   storage_os_disk {
@@ -30,7 +30,7 @@ resource "azurerm_virtual_machine" "this" {
     managed_disk_type = var.storage_os_disk.managed_disk_type
   }
   os_profile {
-    computer_name  = try(var.os_profile.computer_name ,"azvm-${random_string.this}")
+  computer_name = coalesce(var.os_profile.computer_name,"azvm-${random_string.this.result}")
     admin_username = var.os_profile.admin_username
     admin_password = var.os_profile.admin_password
     custom_data    = var.os_profile.custom_data
@@ -40,7 +40,7 @@ resource "azurerm_virtual_machine" "this" {
     disable_password_authentication = var.disable_password_authentication
 
     ssh_keys {
-      key_data = file("${ssh_public_key_path}")
+      key_data = file(var.ssh_public_key_path)
       path     = "/home/testadmin/.ssh/authorized_keys"
     }
   }

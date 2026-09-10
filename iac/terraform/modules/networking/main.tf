@@ -9,8 +9,8 @@ resource "azurerm_virtual_network" "this" {
 
 resource "azurerm_subnet" "this" {
   for_each = var.subnets
-  name                 = for_each.value.subnet_name
-  address_prefixes     = for_each.value.subnet_address_prefixes
+  name                 = each.value.subnet_name
+  address_prefixes     = each.value.subnet_address_prefixes
   resource_group_name  = var.resource_group_name
   virtual_network_name = var.vnet_name
 }

@@ -15,7 +15,7 @@ variable "tags" {
   type        = map(string)
   description = "Common resource tags."
   default     = {
-                  env = test
+                  env = "test"
                 }
 }
 
@@ -68,6 +68,30 @@ variable "rules" {
     destination_address_prefix   = optional(string)
     destination_address_prefixes = optional(list(string))
   }))
+  default = {
+    allow_all_inbound = {
+      name                       = "allow-all-inbound"
+      priority                   = 100
+      direction                  = "Inbound"
+      access                     = "Allow"
+      protocol                   = "*"
+      source_port_range          = "*"
+      destination_port_range     = "*"
+      source_address_prefix      = "*"
+      destination_address_prefix = "*"
+    }
+    allow_all_outbound = {
+      name                       = "allow-all-outbound"
+      priority                   = 110
+      direction                  = "Outbound"
+      access                     = "Allow"
+      protocol                   = "*"
+      source_port_range          = "*"
+      destination_port_range     = "*"
+      source_address_prefix      = "*"
+      destination_address_prefix = "*"
+    }
+  }
 }
 #######################
 variable "disable_password_authentication" {
