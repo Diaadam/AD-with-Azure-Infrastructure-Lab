@@ -41,7 +41,7 @@ resource "azurerm_virtual_machine" "this" {
 
     ssh_keys {
       key_data = file(var.ssh_public_key_path)
-      path     = "/home/testadmin/.ssh/authorized_keys"
+      path     = "/home/azureadmin/.ssh/authorized_keys"
     }
   }
 

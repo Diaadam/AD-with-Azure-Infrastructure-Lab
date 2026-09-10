@@ -53,3 +53,4 @@ output "resource_group_name" { value = module.resource_group.name }
 output "vnet_name" { value = module.networking["vnet1"].vnet_name }
 output "vm_name" { value = module.compute.vm_name }
 output "utility_vm_private_ip" { value = module.compute.private_ip_address }
+output "utility_vm_public_ip" { value = module.compute.public_ip_address }
