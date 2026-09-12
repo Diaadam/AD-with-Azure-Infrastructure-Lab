@@ -1,40 +1,45 @@
-output "storage_account_name" {
-  value = azurerm_storage_account.backend_storage.name
+output "storage_srv_principal_role_name" {
+  value = module.storage_srv_principal.role_name
 }
-output "storage_account_id" {
-  value = azurerm_storage_account.backend_storage.id
+output "storage_srv_principal_client_id" {
+  value = module.storage_srv_principal.client_id
 }
-
-output "storage_container_name" {
-  value = azurerm_storage_container.backend_storage.name
+output "storage_srv_principal_tenant_id" {
+  value = module.storage_srv_principal.tenant_id
 }
-
-output "role_name" {
-  value = azurerm_role_definition.backend_storage.name
-}
-
-output "service_principal" {
-  value = azuread_service_principal.backend_storage
+output "storage_srv_principal" {
+  value       = module.storage_srv_principal.service_principal
+  description = "The full service principal object associated with the application."
 }
 
+output "storage_srv_principal_azuread_application_display_name" {
+  value       = module.storage_srv_principal.azuread_application_display_name
+}
+output "storage_srv_principal_azuread_application_id" {
+  value       = module.storage_srv_principal.azuread_application_id
+}
+##################################################################################
+output "oidc_srv_principal_role_name" {
+  value = module.oidc_srv_principal.role_name
+}
+output "oidc_srv_principal_client_id" {
+  value = module.oidc_srv_principal.client_id
+}
+output "oidc_srv_principal_tenant_id" {
+  value = module.oidc_srv_principal.tenant_id
+}
+output "oidc_srv_principal_service_principal" {
+  value       = module.oidc_srv_principal.service_principal
+  description = "The full service principal object associated with the application."
+}
+
+output "oidc_srv_principal_azuread_application_display_name" {
+  value       = module.oidc_srv_principal.azuread_application_display_name
+}
+output "oidc_srv_principal_azuread_application_id" {
+  value       = module.oidc_srv_principal.azuread_application_id
+}
+#########################################################################################
 output "subscription_id" {
-  value = data.azurerm_subscription.backend_storage.subscription_id
-}
-
-
-output "client_id" {
-  value = azuread_application.backend_storage.client_id
-}
-
-output "client_secret" {
-  value     = azuread_service_principal_password.backend_storage.value
-  sensitive = true
-}
-
-output "tenant_id" {
-  value = data.azuread_client_config.current.tenant_id
-}
-
-output "state_path" {
-  value = local.state_path
+  value = data.azurerm_subscription.this.subscription_id
 }
