@@ -7,7 +7,7 @@ resource "random_string" "backend_storage" {
 # data "azuread_client_config" "current" {}
 
 locals {
-  naming_string = "backendstorage${random_string.backend_storage.result}"
+  naming_string = random_string.backend_storage.result
 }
 
 # Create resource group

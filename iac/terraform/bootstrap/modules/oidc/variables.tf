@@ -1,11 +1,11 @@
 variable "repository_name" {
   type        = string
-  description = "(Required) Name of the repository in the form (org | user)/repository"
+  description = "(Required) Name of the repository in the form (org | user)/repository example:"
 
   validation {
-    condition     = can(regex("[a-zA-Z][a-zA-Z0-9-]*/[a-zA-Z0-9][a-zA-Z0-9_\\-\\.]*", var.repository_name))
-    error_message = "Repository name must be in the form organization/repository or username/repository."
-  }
+      condition     = length(split("/", var.repository_name)) == 2
+      error_message = "Repository name must contain exactly one '/' separating the owner and repository name, optionally including immutable IDs."
+    }
 }
 
 variable "entity_type" {
