@@ -62,7 +62,7 @@ jobs:
       - name: Azure Login
         uses: azure/login@v2
         with:
-          client-id: ${{vars.STORAGE_CLIENT_ID}}
+          client-id: ${{vars.OIDC_CLIENT_ID}}
           tenant-id: ${{vars.TENANT_ID}}
           subscription-id: ${{vars.SUBSCRIPTION_ID}}
 
