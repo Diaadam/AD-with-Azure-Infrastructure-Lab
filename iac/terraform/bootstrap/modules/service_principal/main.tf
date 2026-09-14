@@ -29,7 +29,9 @@ resource "azurerm_role_definition" "this" {
     data_actions = [
       "Microsoft.Storage/storageAccounts/blobServices/containers/blobs/read",
       "Microsoft.Storage/storageAccounts/blobServices/containers/blobs/write",
-      "Microsoft.Storage/storageAccounts/blobServices/containers/blobs/add/action"
+      "Microsoft.Storage/storageAccounts/blobServices/containers/blobs/add/action",
+      "Microsoft.Storage/storageAccounts/blobServices/containers/blobs/lease",
+      "Microsoft.Storage/storageAccounts/blobServices/containers/blobs/delete"
     ]
   }
 

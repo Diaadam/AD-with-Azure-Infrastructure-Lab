@@ -24,7 +24,7 @@ jobs:
       - name: Azure Login
         uses: azure/login@v2
         with:
-          client-id: ${{vars.CLIENT_ID}}
+          client-id: ${{vars.OIDC_CLIENT_ID}}
           tenant-id: ${{vars.TENANT_ID}}
           subscription-id: ${{vars.SUBSCRIPTION_ID}}
 
@@ -35,7 +35,7 @@ jobs:
           ARM_USE_AZUREAD: "true"
         run: |
           terraform init \
-            -backend-config="resource_group_name=tfstate-rg" \
+            -backend-config="resource_group_name=${{vars.STORAGE_RG}}" \
             -backend-config="storage_account_name=${{vars.STORAGE_ACCOUNT_NAME}}" \
             -backend-config="container_name=${{vars.STORAGE_CONTAINER_NAME}}" \
             -backend-config="key=${{vars.KEY}}"

@@ -12,7 +12,7 @@ locals {
 
 # Create resource group
 resource "azurerm_resource_group" "backend_storage" {
-  name     = local.naming_string
+  name     = "backendstorage${local.naming_string}"
   location = "uaenorth"
   tags = var.tags
 }
