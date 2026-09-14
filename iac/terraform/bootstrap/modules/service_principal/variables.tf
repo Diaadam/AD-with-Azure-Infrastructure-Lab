@@ -19,7 +19,7 @@ variable "tags" {
 variable "identity_name" {
   type        = string
   description = "(optional) Name of application and service principal."
-  default = "null"
+  default     = null
 }
 #################
 variable "RBAC_name" {

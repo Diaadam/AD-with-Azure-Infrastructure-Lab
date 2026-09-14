@@ -64,29 +64,3 @@ resource "azurerm_storage_container" "backend_storage" {
 
 
 ####################################################################
-# Get the current subscription
-data "azurerm_subscription" "backend_storage" {}
-
-# Create a custom role with ABAC
-resource "azurerm_role_definition" "backend_storage" {
-  name        = "${local.naming_string}-write-access"
-  scope       = data.azurerm_subscription.backend_storage.id
-  description = "Custom role definition allowing write access to the storage account ${azurerm_storage_account.backend_storage.name}."
-
-  permissions {
-    actions = [
-      "Microsoft.Storage/storageAccounts/blobServices/containers/read",
-      "Microsoft.Storage/storageAccounts/blobServices/generateUserDelegationKey/action"
-    ]
-    data_actions = [
-      "Microsoft.Storage/storageAccounts/blobServices/containers/blobs/read",
-      "Microsoft.Storage/storageAccounts/blobServices/containers/blobs/write",
-      "Microsoft.Storage/storageAccounts/blobServices/containers/blobs/add/action"
-    ]
-  }
-
-  assignable_scopes = [
-    data.azurerm_subscription.backend_storage.id
-  ]
-}
-#############################################
