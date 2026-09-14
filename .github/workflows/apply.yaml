@@ -13,6 +13,12 @@ jobs:
       packages: read
       id-token: write
     runs-on: ubuntu-latest
+    env:
+      ARM_USE_OIDC: "true"
+      ARM_USE_AZUREAD: "true"
+      ARM_CLIENT_ID: ${{vars.OIDC_CLIENT_ID}}
+      ARM_TENANT_ID: ${{vars.TENANT_ID}}
+      ARM_SUBSCRIPTION_ID: ${{vars.SUBSCRIPTION_ID}}
     steps:
       - uses: actions/checkout@v4
 
@@ -31,11 +37,6 @@ jobs:
       - name: Terraform Init
         working-directory: iac\terraform\environments\dev
         shell: bash
-        env:
-          ARM_USE_AZUREAD: "true"
-        run: |
-          terraform init \
-            -backend-config="resource_group_name=${{vars.STORAGE_RG}}" \
             -backend-config="storage_account_name=${{vars.STORAGE_ACCOUNT_NAME}}" \
             -backend-config="container_name=${{vars.STORAGE_CONTAINER_NAME}}" \
             -backend-config="key=${{vars.KEY}}"

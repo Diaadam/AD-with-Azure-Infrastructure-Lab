@@ -50,6 +50,8 @@ jobs:
     needs: tfsec
     env:
       TF_IN_AUTOMATION: "true"
+      ARM_USE_OIDC: "true"
+      ARM_USE_AZUREAD: "true"
     steps:
       - name: Checkout
         uses: actions/checkout@v4
