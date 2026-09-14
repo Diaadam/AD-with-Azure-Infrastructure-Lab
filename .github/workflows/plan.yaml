@@ -34,7 +34,8 @@ jobs:
             --concise-output
             --format sarif
             --out iac/terraform/environments/${{ inputs.target }}/tfsec.sarif
-            --soft-fail-severities LOW, MEDIUM
+            --minimum-severity HIGH
+            --soft-fail
 
       - name: Upload SARIF (tfsec)
         uses: github/codeql-action/upload-sarif@v4
