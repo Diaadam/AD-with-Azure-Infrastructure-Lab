@@ -38,9 +38,6 @@ jobs:
       - name: Terraform Init
         working-directory: iac/terraform/environments/dev
         shell: bash
-        env:
-          ARM_USE_OIDC: "true"
-          ARM_USE_AZUREAD: "true"
         run: |
           terraform init \
             -backend-config="resource_group_name=${{vars.STORAGE_RG}}" \
