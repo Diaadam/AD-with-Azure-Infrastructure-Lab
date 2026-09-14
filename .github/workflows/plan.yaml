@@ -52,6 +52,9 @@ jobs:
       TF_IN_AUTOMATION: "true"
       ARM_USE_OIDC: "true"
       ARM_USE_AZUREAD: "true"
+      ARM_CLIENT_ID: ${{ vars.OIDC_CLIENT_ID }}
+      ARM_TENANT_ID: ${{ vars.TENANT_ID }}
+      ARM_SUBSCRIPTION_ID: ${{ vars.SUBSCRIPTION_ID }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
