@@ -26,6 +26,8 @@ backend "azurerm" {
 
 The `azure/login` GitHub Action authenticates the Azure CLI, but Terraform also needs its own AzureRM authentication environment variables.
 
+> The workflow authenticates Azure CLI with azure/login, while Terraform independently authenticates through AzureRM using the ARM_* environment variables. The two tools use separate authentication clients, even though they can use the same OIDC identity. 
+
 ## Required GitHub Actions Environment Variables
 
 The Terraform job must export:
