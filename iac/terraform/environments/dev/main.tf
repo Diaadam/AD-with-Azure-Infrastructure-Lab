@@ -105,6 +105,7 @@ resource "azurerm_virtual_machine_extension" "child_AD-Domain-srv_install_adds" 
   type                 = "CustomScriptExtension"
   type_handler_version = "1.10"
 
+
   settings = <<SETTINGS
     {
       "commandToExecute": "powershell.exe -ExecutionPolicy Unrestricted -Command \"Install-WindowsFeature -Name AD-Domain-Services -IncludeManagementTools\""
