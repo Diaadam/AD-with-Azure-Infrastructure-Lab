@@ -36,12 +36,25 @@ resource "azurerm_virtual_machine" "this" {
     custom_data    = var.os_profile.custom_data
   }
 
-  os_profile_linux_config {
-    disable_password_authentication = var.disable_password_authentication
+  dynamic "os_profile_linux_config" {
+    for_each = lower(var.src_img_ref.publisher) == "microsoftwindowsserver" ? [] : [1]
 
-    ssh_keys {
-      key_data = file(var.ssh_public_key_path)
-      path     = "/home/azureadmin/.ssh/authorized_keys"
+    content {
+      disable_password_authentication = var.disable_password_authentication
+
+      ssh_keys {
+        key_data = file(var.ssh_public_key_path)
+        path     = "/home/azureadmin/.ssh/authorized_keys"
+      }
+    }
+  }
+
+  dynamic "os_profile_windows_config" {
+    for_each = lower(var.src_img_ref.publisher) == "microsoftwindowsserver" ? [1] : []
+
+    content {
+      provision_vm_agent        = true
+      enable_automatic_upgrades = true
     }
   }
 
@@ -51,6 +64,7 @@ resource "azurerm_virtual_machine" "this" {
 ################################################
 
 resource "azurerm_public_ip" "this" {
+  count = var.no_pip == true ? 0:1
   name                = var.public_ip
   resource_group_name = var.resource_group_name
   location            = var.location
@@ -67,8 +81,9 @@ resource "azurerm_network_interface" "this" {
   ip_configuration {
     name                          = "internal"
     subnet_id                     = var.subnet_id
-    private_ip_address_allocation = "Dynamic"
-    public_ip_address_id= azurerm_public_ip.this.id
+    private_ip_address_allocation = var.Dynamic_private_ip_address_alloc ? "Dynamic" : "Static"
+    private_ip_address            = var.Dynamic_private_ip_address_alloc ? null : var.private_ip_address
+    public_ip_address_id= var.no_pip == true ? null : azurerm_public_ip.this[0].id # count turned `this` into a list
 
   }
 }

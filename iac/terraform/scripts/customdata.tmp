@@ -1,0 +1,4 @@
+<powershell>
+# Install the Active Directory Domain Services role and management tools.
+Install-WindowsFeature -Name AD-Domain-Services -IncludeManagementTools
+</powershell>

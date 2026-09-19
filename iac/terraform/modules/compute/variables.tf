@@ -3,6 +3,11 @@ variable "disable_password_authentication" {
      description = "true to ssh."
      default = true
 }
+variable "no_pip" {
+     type    = bool
+     description = "false to create a public ip"
+     default = true
+}
 
 variable "name" {
      type = string
@@ -83,8 +88,17 @@ variable "subnet_id" {
 variable "public_ip" {
   type = string
   description = "{vm name}_pip"
+  default = "null"
 }
 variable "nic_name" {
   type = string
   description = "{vm name}_nic"
 }
+variable "Dynamic_private_ip_address_alloc" {
+ type =  bool
+ default = "true"
+} 
+ variable "private_ip_address" {
+     type = string
+     default = null
+ }
