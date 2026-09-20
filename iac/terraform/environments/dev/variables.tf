@@ -10,11 +10,11 @@ variable "location" {
   description = "Azure region."
   default     = "UAE North"
 }
-variable "location2" {
-  type        = string
-  description = "Azure region."
-  default     = "italynorth"
-}
+# variable "location2" {
+#   type        = string
+#   description = "Azure region."
+#   default     = "italynorth"
+# }
 
 variable "tags" {
   type        = map(string)
@@ -66,6 +66,7 @@ variable "security_group_name" {
 variable "pc_public_ip_cidr" {
   type        = string
   description = "Public IP CIDR allowed to access Azure Bastion."
+  default     = null
 }
 
 variable "rules" {
@@ -117,23 +118,6 @@ variable "disable_password_authentication" {
   default     = true
 }
 
-variable "compute_name_ADC" {
-  type = string
-
-}
-variable "compute_name_RODC" {
-  type = string
-
-}
-variable "compute_name_Child" {
-  type = string
-
-}
-variable "compute_name_PDC" {
-  type = string
-
-}
-
 
 variable "compute_size" {
   type    = string
@@ -177,6 +161,16 @@ variable "src_img_ref" {
     version   = "latest"
   }
 }
+
+variable "src_img_ref_zabbix" {
+  type = object({
+    publisher = string
+    offer     = string
+    sku       = string
+    version   = string
+  })
+
+}
 variable "storage_os_disk" {
   type = object({
     name              = string
@@ -206,9 +200,42 @@ variable "private_ip_ADC" {
 variable "private_ip_RODC" {
   type = string
 }
-variable "private_ip_Child" {
+variable "private_ip_Child_1" {
   type = string
 }
+variable "private_ip_Child_2" {
+  type = string
+}
+variable "private_ip_zabbix" {
+  type = string
+}
+
+
+variable "compute_name_ADC" {
+  type = string
+
+}
+variable "compute_name_RODC" {
+  type = string
+
+}
+variable "compute_name_Child_1" {
+  type = string
+
+}
+variable "compute_name_Child_2" {
+  type = string
+
+}
+variable "compute_name_PDC" {
+  type = string
+
+}
+variable "compute_name_zabbix" {
+  type = string
+
+}
+
 ###################################################
 ####################
 

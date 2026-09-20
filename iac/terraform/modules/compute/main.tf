@@ -1,5 +1,6 @@
 
 # Use random string to create naming suffix
+#TODO move outside
 resource "random_string" "this" {
   length  = 6
   special = false

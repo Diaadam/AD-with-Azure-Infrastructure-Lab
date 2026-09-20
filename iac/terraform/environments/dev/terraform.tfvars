@@ -1,13 +1,17 @@
-compute_name_ADC   = "adc"
-compute_name_RODC  = "rodc"
-compute_name_PDC   = "pdc"
-compute_name_Child = "cairochild"
+compute_name_ADC     = "adc"
+compute_name_RODC    = "rodc"
+compute_name_PDC     = "pdc"
+compute_name_Child_1 = "cairochild"
+compute_name_Child_2 = "gizachild"
+compute_name_zabbix  = "zabbix-server"
 
 Dynamic_private_ip_address_alloc = false
 private_ip_PDC                   = "10.1.2.20"
 private_ip_ADC                   = "10.1.3.20"
 private_ip_RODC                  = "10.1.4.20"
-private_ip_Child                 = "10.1.5.20"
+private_ip_Child_1               = "10.1.5.20"
+private_ip_Child_2               = "10.1.6.20"
+private_ip_zabbix                = "10.1.7.20"
 
 resource_group_name = "ad-multi-site-project"
 
@@ -18,7 +22,7 @@ compute_size   = "Standard_B1ms"
 disable_password_authentication = false
 
 os_profile = {
-  computer_name  = "ad-multi-site-project"
+  # computer_name  = "ad-multi-site-project"
   admin_username = "azureadmin"
   admin_password = "Tr0ubl3!M@k3r#99"
 }
@@ -30,8 +34,15 @@ src_img_ref = {
   version   = "latest"
 }
 
+src_img_ref_zabbix = {
+  publisher = "Canonical"
+  offer     = "0001-com-ubuntu-server-jammy"
+  sku       = "22_04-lts"# for a, d series quotas -gen2"
+  version   = "latest"
+}
+
 storage_os_disk = {
-  name              = "ad-dc-osdisk"
+  name              = "ad-dc-osdisk" # will be overwriten
   caching           = "ReadWrite"
   create_option     = "FromImage"
   managed_disk_type = "Standard_LRS"
@@ -39,7 +50,7 @@ storage_os_disk = {
 # compute_enabled          = false
 # admin_ssh_public_key     = ""
 # Public IPv4 address of the administrator PC allowed to use Bastion.
-pc_public_ip_cidr = "156.207.240.164/32"
+# pc_public_ip_cidr = "156.207.240.223/32"
 tags = {
   environment = "dev"
   project     = "ad-lab"
@@ -94,6 +105,14 @@ Vnets = {
       "NasrCityChild" = {
         subnet_name             = "NasrCityChild"
         subnet_address_prefixes = ["10.1.5.0/24"]
+      }
+      "Giza" = {
+        subnet_name             = "Giza"
+        subnet_address_prefixes = ["10.1.6.0/24"]
+      }
+      "Zabbix" = {
+        subnet_name             = "zabbix"
+        subnet_address_prefixes = ["10.1.7.0/24"]
       }
     }
   }

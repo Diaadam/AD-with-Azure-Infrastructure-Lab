@@ -1,3 +1,9 @@
+data "http" "my_ip" {
+  url = "https://ipv4.icanhazip.com"
+}
+locals {
+  my_ip = "${chomp(data.http.my_ip.response_body)}/32"
+}
 module "nsg_azure_bastion" {
   source              = "../../modules/security"
   resource_group_name = module.resource_group.name
@@ -14,7 +20,7 @@ module "nsg_azure_bastion" {
       protocol                   = "Tcp"
       source_port_range          = "*"
       destination_port_range     = "443"
-      source_address_prefix      = var.pc_public_ip_cidr
+      source_address_prefix      = coalesce(local.my_ip, local.my_ip)
       destination_address_prefix = "*"
     }
 
