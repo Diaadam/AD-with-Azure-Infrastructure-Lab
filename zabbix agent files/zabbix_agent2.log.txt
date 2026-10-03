@@ -1,0 +1,705 @@
+2026/09/29 03:54:11.965191 Starting Zabbix Agent 2 (7.0.26)
+2026/09/29 03:54:12.048841 OpenSSL library (OpenSSL 3.5.1 1 Jul 2025) initialized
+2026/09/29 03:54:12.048841 using configuration file: C:\Program Files\Zabbix Agent 2\zabbix_agent2.conf
+2026/09/29 03:54:12.048841 using plugin 'Agent' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/09/29 03:54:12.048841 using plugin 'Ceph' (built-in) providing following interfaces: exporter, runner, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/09/29 03:54:12.064934 using plugin 'Cpu' (built-in) providing following interfaces: exporter, runner, maximum capacity: 1000, active checks on start enabled: false
+2026/09/29 03:54:12.064934 using plugin 'DNS' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/09/29 03:54:12.064934 using plugin 'File' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/09/29 03:54:12.064934 using plugin 'Log' (built-in) providing following interfaces: exporter, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/09/29 03:54:12.064934 using plugin 'MQTT' (built-in) providing following interfaces: watcher, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/09/29 03:54:12.064934 using plugin 'Memcached' (built-in) providing following interfaces: exporter, runner, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/09/29 03:54:12.064934 using plugin 'Memory' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/09/29 03:54:12.064934 using plugin 'Modbus' (built-in) providing following interfaces: exporter, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/09/29 03:54:12.064934 using plugin 'Mysql' (built-in) providing following interfaces: exporter, runner, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/09/29 03:54:12.064934 using plugin 'NetIf' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/09/29 03:54:12.064934 using plugin 'Oracle' (built-in) providing following interfaces: exporter, runner, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/09/29 03:54:12.064934 using plugin 'Proc' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/09/29 03:54:12.064934 using plugin 'Redis' (built-in) providing following interfaces: exporter, runner, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/09/29 03:54:12.064934 using plugin 'Registry' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/09/29 03:54:12.064934 using plugin 'Smart' (built-in) providing following interfaces: exporter, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/09/29 03:54:12.064934 using plugin 'Sw' (built-in) providing following interfaces: exporter, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/09/29 03:54:12.064934 using plugin 'Swap' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/09/29 03:54:12.064934 using plugin 'SystemRun' (built-in) providing following interfaces: exporter, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/09/29 03:54:12.064934 using plugin 'TCP' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/09/29 03:54:12.064934 using plugin 'UDP' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/09/29 03:54:12.064934 using plugin 'Uname' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/09/29 03:54:12.064934 using plugin 'Uptime' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/09/29 03:54:12.064934 using plugin 'Users' (built-in) providing following interfaces: exporter, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/09/29 03:54:12.064934 using plugin 'VFSDir' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/09/29 03:54:12.064934 using plugin 'VMemory' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/09/29 03:54:12.064934 using plugin 'VfsFs' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/09/29 03:54:12.064934 using plugin 'WebCertificate' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/09/29 03:54:12.064934 using plugin 'WebPage' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/09/29 03:54:12.064934 using plugin 'WindowsEventlog' (built-in) providing following interfaces: exporter, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/09/29 03:54:12.064934 using plugin 'WindowsPerfInstance' (built-in) providing following interfaces: exporter, maximum capacity: 1, active checks on start enabled: false
+2026/09/29 03:54:12.064934 using plugin 'WindowsPerfMon' (built-in) providing following interfaces: exporter, runner, maximum capacity: 1000, active checks on start enabled: false
+2026/09/29 03:54:12.064934 using plugin 'WindowsServices' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/09/29 03:54:12.064934 using plugin 'Wmi' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/09/29 03:54:12.064934 using plugin 'ZabbixAsync' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/09/29 03:54:12.064934 using plugin 'ZabbixStats' (built-in) providing following interfaces: exporter, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/09/29 03:54:12.064934 using plugin 'ZabbixSync' (built-in) providing following interfaces: exporter, maximum capacity: 1, active checks on start enabled: false
+2026/09/29 03:54:12.834002 Plugin communication protocol version is 6.4.0
+2026/09/29 03:54:13.003671 Zabbix Agent2 hostname: [pdc]
+2026/09/29 03:54:18.091900 [101] cannot connect to [10.1.7.20:10051]: dial tcp :0->10.1.7.20:10051: i/o timeout
+2026/09/29 03:54:18.091900 [101] active check configuration update from host [pdc] started to fail
+2026/09/29 03:54:21.092890 [101] cannot connect to [10.1.7.20:10051]: dial tcp :0->10.1.7.20:10051: i/o timeout
+2026/09/29 03:54:21.092890 [101] sending of heartbeat message for [pdc] started to fail
+2026/09/29 03:57:26.169354 [101] cannot connect to [10.1.7.20:10051]: dial tcp :0->10.1.7.20:10051: connectex: No connection could be made because the target machine actively refused it.
+2026/09/29 03:57:26.169354 [101] active check configuration update from host [pdc] started to fail
+2026/09/29 03:57:29.125417 [101] cannot connect to [10.1.7.20:10051]: dial tcp :0->10.1.7.20:10051: connectex: No connection could be made because the target machine actively refused it.
+2026/09/29 03:57:29.125417 [101] sending of heartbeat message for [pdc] started to fail
+2026/09/29 04:02:34.237141 [101] active check configuration update from [10.1.7.20:10051] is working again
+2026/09/29 04:02:34.237141 [101] no active checks on server [10.1.7.20:10051]: host [pdc] not found
+2026/09/29 04:02:34.237141 [101] active checks on server started to fail
+2026/09/29 04:02:37.093990 [101] sending of heartbeat message to [10.1.7.20:10051] is working again
+2026/09/29 04:39:37.268093 stopping service due to syscall signal
+2026/09/29 04:39:37.272764 Zabbix Agent 2 stopped. (7.0.26)
+2026/09/29 04:42:13.102054 Starting Zabbix Agent 2 (7.0.26)
+2026/09/29 04:42:13.211353 OpenSSL library (OpenSSL 3.5.1 1 Jul 2025) initialized
+2026/09/29 04:42:13.211353 using configuration file: C:\Program Files\Zabbix Agent 2\zabbix_agent2.conf
+2026/09/29 04:42:13.211353 using plugin 'Agent' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/09/29 04:42:13.211353 using plugin 'Ceph' (built-in) providing following interfaces: exporter, runner, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/09/29 04:42:13.211353 using plugin 'Cpu' (built-in) providing following interfaces: exporter, runner, maximum capacity: 1000, active checks on start enabled: false
+2026/09/29 04:42:13.211353 using plugin 'DNS' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/09/29 04:42:13.211353 using plugin 'File' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/09/29 04:42:13.211353 using plugin 'Log' (built-in) providing following interfaces: exporter, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/09/29 04:42:13.211353 using plugin 'MQTT' (built-in) providing following interfaces: watcher, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/09/29 04:42:13.211353 using plugin 'Memcached' (built-in) providing following interfaces: exporter, runner, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/09/29 04:42:13.211353 using plugin 'Memory' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/09/29 04:42:13.211353 using plugin 'Modbus' (built-in) providing following interfaces: exporter, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/09/29 04:42:13.211353 using plugin 'Mysql' (built-in) providing following interfaces: exporter, runner, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/09/29 04:42:13.211353 using plugin 'NetIf' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/09/29 04:42:13.211353 using plugin 'Oracle' (built-in) providing following interfaces: exporter, runner, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/09/29 04:42:13.211353 using plugin 'Proc' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/09/29 04:42:13.211353 using plugin 'Redis' (built-in) providing following interfaces: exporter, runner, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/09/29 04:42:13.211353 using plugin 'Registry' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/09/29 04:42:13.211353 using plugin 'Smart' (built-in) providing following interfaces: exporter, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/09/29 04:42:13.211353 using plugin 'Sw' (built-in) providing following interfaces: exporter, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/09/29 04:42:13.211353 using plugin 'Swap' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/09/29 04:42:13.211353 using plugin 'SystemRun' (built-in) providing following interfaces: exporter, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/09/29 04:42:13.211353 using plugin 'TCP' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/09/29 04:42:13.211353 using plugin 'UDP' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/09/29 04:42:13.211353 using plugin 'Uname' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/09/29 04:42:13.211353 using plugin 'Uptime' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/09/29 04:42:13.211353 using plugin 'Users' (built-in) providing following interfaces: exporter, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/09/29 04:42:13.211353 using plugin 'VFSDir' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/09/29 04:42:13.211353 using plugin 'VMemory' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/09/29 04:42:13.211353 using plugin 'VfsFs' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/09/29 04:42:13.211353 using plugin 'WebCertificate' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/09/29 04:42:13.211353 using plugin 'WebPage' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/09/29 04:42:13.211353 using plugin 'WindowsEventlog' (built-in) providing following interfaces: exporter, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/09/29 04:42:13.211353 using plugin 'WindowsPerfInstance' (built-in) providing following interfaces: exporter, maximum capacity: 1, active checks on start enabled: false
+2026/09/29 04:42:13.211353 using plugin 'WindowsPerfMon' (built-in) providing following interfaces: exporter, runner, maximum capacity: 1000, active checks on start enabled: false
+2026/09/29 04:42:13.211353 using plugin 'WindowsServices' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/09/29 04:42:13.211353 using plugin 'Wmi' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/09/29 04:42:13.211353 using plugin 'ZabbixAsync' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/09/29 04:42:13.211353 using plugin 'ZabbixStats' (built-in) providing following interfaces: exporter, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/09/29 04:42:13.211353 using plugin 'ZabbixSync' (built-in) providing following interfaces: exporter, maximum capacity: 1, active checks on start enabled: false
+2026/09/29 04:42:13.650756 Plugin communication protocol version is 6.4.0
+2026/09/29 04:42:14.002145 Zabbix Agent2 hostname: [pdc]
+2026/09/29 04:42:16.013345 [101] no active checks on server [10.1.7.20:10051]: host [pdc] not found
+2026/09/29 04:42:16.013345 [101] active checks on server started to fail
+2026/09/29 05:19:19.031977 [101] cannot connect to [10.1.7.20:10051]: dial tcp :0->10.1.7.20:10051: i/o timeout
+2026/09/29 05:19:19.031977 [101] active check configuration update from host [pdc] started to fail
+2026/09/29 05:19:22.032765 [101] cannot connect to [10.1.7.20:10051]: dial tcp :0->10.1.7.20:10051: i/o timeout
+2026/09/29 05:19:22.032765 [101] sending of heartbeat message for [pdc] started to fail
+2026/09/29 05:20:21.072821 [101] cannot connect to [10.1.7.20:10051]: dial tcp :0->10.1.7.20:10051: connectex: No connection could be made because the target machine actively refused it.
+2026/09/29 05:20:21.072821 [101] active check configuration update from host [pdc] started to fail
+2026/09/29 05:20:24.084374 [101] cannot connect to [10.1.7.20:10051]: dial tcp :0->10.1.7.20:10051: connectex: No connection could be made because the target machine actively refused it.
+2026/09/29 05:20:24.084374 [101] sending of heartbeat message for [pdc] started to fail
+2026/09/29 05:25:29.042266 [101] active check configuration update from [10.1.7.20:10051] is working again
+2026/09/29 05:25:32.046664 [101] sending of heartbeat message to [10.1.7.20:10051] is working again
+2026/09/29 05:43:53.715797 Zabbix Agent 2 stopped. (7.0.26)
+2026/09/29 05:43:56.515763 Starting Zabbix Agent 2 (7.0.26)
+2026/09/29 05:43:56.590788 OpenSSL library (OpenSSL 3.5.1 1 Jul 2025) initialized
+2026/09/29 05:43:56.590788 using configuration file: C:\Program Files\Zabbix Agent 2\zabbix_agent2.conf
+2026/09/29 05:43:56.590788 using plugin 'Agent' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/09/29 05:43:56.590788 using plugin 'Ceph' (built-in) providing following interfaces: exporter, runner, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/09/29 05:43:56.590788 using plugin 'Cpu' (built-in) providing following interfaces: exporter, runner, maximum capacity: 1000, active checks on start enabled: false
+2026/09/29 05:43:56.590788 using plugin 'DNS' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/09/29 05:43:56.590788 using plugin 'File' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/09/29 05:43:56.590788 using plugin 'Log' (built-in) providing following interfaces: exporter, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/09/29 05:43:56.590788 using plugin 'MQTT' (built-in) providing following interfaces: watcher, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/09/29 05:43:56.590788 using plugin 'Memcached' (built-in) providing following interfaces: exporter, runner, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/09/29 05:43:56.590788 using plugin 'Memory' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/09/29 05:43:56.590788 using plugin 'Modbus' (built-in) providing following interfaces: exporter, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/09/29 05:43:56.590788 using plugin 'Mysql' (built-in) providing following interfaces: exporter, runner, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/09/29 05:43:56.590788 using plugin 'NetIf' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/09/29 05:43:56.590788 using plugin 'Oracle' (built-in) providing following interfaces: exporter, runner, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/09/29 05:43:56.590788 using plugin 'Proc' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/09/29 05:43:56.590788 using plugin 'Redis' (built-in) providing following interfaces: exporter, runner, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/09/29 05:43:56.590788 using plugin 'Registry' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/09/29 05:43:56.590788 using plugin 'Smart' (built-in) providing following interfaces: exporter, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/09/29 05:43:56.590788 using plugin 'Sw' (built-in) providing following interfaces: exporter, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/09/29 05:43:56.590788 using plugin 'Swap' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/09/29 05:43:56.590788 using plugin 'SystemRun' (built-in) providing following interfaces: exporter, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/09/29 05:43:56.590788 using plugin 'TCP' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/09/29 05:43:56.590788 using plugin 'UDP' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/09/29 05:43:56.606427 using plugin 'Uname' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/09/29 05:43:56.606427 using plugin 'Uptime' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/09/29 05:43:56.606427 using plugin 'Users' (built-in) providing following interfaces: exporter, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/09/29 05:43:56.606427 using plugin 'VFSDir' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/09/29 05:43:56.606427 using plugin 'VMemory' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/09/29 05:43:56.606427 using plugin 'VfsFs' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/09/29 05:43:56.606427 using plugin 'WebCertificate' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/09/29 05:43:56.606427 using plugin 'WebPage' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/09/29 05:43:56.606427 using plugin 'WindowsEventlog' (built-in) providing following interfaces: exporter, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/09/29 05:43:56.606427 using plugin 'WindowsPerfInstance' (built-in) providing following interfaces: exporter, maximum capacity: 1, active checks on start enabled: false
+2026/09/29 05:43:56.606427 using plugin 'WindowsPerfMon' (built-in) providing following interfaces: exporter, runner, maximum capacity: 1000, active checks on start enabled: false
+2026/09/29 05:43:56.606427 using plugin 'WindowsServices' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/09/29 05:43:56.606427 using plugin 'Wmi' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/09/29 05:43:56.606427 using plugin 'ZabbixAsync' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/09/29 05:43:56.606427 using plugin 'ZabbixStats' (built-in) providing following interfaces: exporter, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/09/29 05:43:56.606427 using plugin 'ZabbixSync' (built-in) providing following interfaces: exporter, maximum capacity: 1, active checks on start enabled: false
+2026/09/29 05:43:57.424606 Plugin communication protocol version is 6.4.0
+2026/09/29 05:43:58.001164 Zabbix Agent2 hostname: [pdc]
+2026/09/29 05:44:00.043880 [101] no active checks on server [10.1.7.20:10051]: host [pdc] not found
+2026/09/29 05:44:00.043880 [101] active checks on server started to fail
+2026/09/29 06:01:00.026267 [101] active checks on server are active again
+2026/09/29 06:23:10.044646 [101] no active checks on server [10.1.7.20:10051]: host [pdc] not found
+2026/09/29 06:23:10.044646 [101] active checks on server started to fail
+2026/09/29 06:28:10.041852 [101] active checks on server are active again
+2026/09/29 07:02:10.164058 check 'wmi.get[root/cimv2,"Select NumberOfLogicalProcessors from Win32_ComputerSystem"]' is not supported: Timeout occurred while gathering data.
+2026/09/29 07:02:32.139230 detected 13 time difference between queue checks, rescheduling tasks
+2026/09/29 07:02:32.140230 check 'system.uptime' is not supported: Timeout occurred while gathering data.
+2026/09/29 09:16:50.759452 stopping service due to syscall signal
+2026/09/29 09:16:50.775683 Zabbix Agent 2 stopped. (7.0.26)
+2026/10/01 01:04:23.437522 Starting Zabbix Agent 2 (7.0.26)
+2026/10/01 01:04:23.474637 OpenSSL library (OpenSSL 3.5.1 1 Jul 2025) initialized
+2026/10/01 01:04:23.474637 using configuration file: C:\Program Files\Zabbix Agent 2\zabbix_agent2.conf
+2026/10/01 01:04:23.474637 using plugin 'Agent' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 01:04:23.474637 using plugin 'Ceph' (built-in) providing following interfaces: exporter, runner, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 01:04:23.474637 using plugin 'Cpu' (built-in) providing following interfaces: exporter, runner, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 01:04:23.474637 using plugin 'DNS' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 01:04:23.474637 using plugin 'File' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 01:04:23.474637 using plugin 'Log' (built-in) providing following interfaces: exporter, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 01:04:23.474637 using plugin 'MQTT' (built-in) providing following interfaces: watcher, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 01:04:23.474637 using plugin 'Memcached' (built-in) providing following interfaces: exporter, runner, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 01:04:23.474637 using plugin 'Memory' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 01:04:23.474637 using plugin 'Modbus' (built-in) providing following interfaces: exporter, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 01:04:23.474637 using plugin 'Mysql' (built-in) providing following interfaces: exporter, runner, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 01:04:23.474637 using plugin 'NetIf' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 01:04:23.474637 using plugin 'Oracle' (built-in) providing following interfaces: exporter, runner, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 01:04:23.474637 using plugin 'Proc' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 01:04:23.474637 using plugin 'Redis' (built-in) providing following interfaces: exporter, runner, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 01:04:23.474637 using plugin 'Registry' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 01:04:23.474637 using plugin 'Smart' (built-in) providing following interfaces: exporter, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 01:04:23.474637 using plugin 'Sw' (built-in) providing following interfaces: exporter, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 01:04:23.474637 using plugin 'Swap' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 01:04:23.474637 using plugin 'SystemRun' (built-in) providing following interfaces: exporter, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 01:04:23.474637 using plugin 'TCP' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 01:04:23.474637 using plugin 'UDP' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 01:04:23.474637 using plugin 'Uname' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 01:04:23.474637 using plugin 'Uptime' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 01:04:23.474637 using plugin 'Users' (built-in) providing following interfaces: exporter, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 01:04:23.474637 using plugin 'VFSDir' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 01:04:23.474637 using plugin 'VMemory' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 01:04:23.474637 using plugin 'VfsFs' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 01:04:23.474637 using plugin 'WebCertificate' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 01:04:23.474637 using plugin 'WebPage' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 01:04:23.474637 using plugin 'WindowsEventlog' (built-in) providing following interfaces: exporter, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 01:04:23.474637 using plugin 'WindowsPerfInstance' (built-in) providing following interfaces: exporter, maximum capacity: 1, active checks on start enabled: false
+2026/10/01 01:04:23.474637 using plugin 'WindowsPerfMon' (built-in) providing following interfaces: exporter, runner, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 01:04:23.474637 using plugin 'WindowsServices' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 01:04:23.474637 using plugin 'Wmi' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 01:04:23.474637 using plugin 'ZabbixAsync' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 01:04:23.474637 using plugin 'ZabbixStats' (built-in) providing following interfaces: exporter, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 01:04:23.488648 using plugin 'ZabbixSync' (built-in) providing following interfaces: exporter, maximum capacity: 1, active checks on start enabled: false
+2026/10/01 01:04:23.801584 Plugin communication protocol version is 6.4.0
+2026/10/01 01:04:24.000482 Zabbix Agent2 hostname: [pdc]
+2026/10/01 01:07:49.446927 check 'wmi.getall[root\cimv2,"select Name,Description,NetConnectionID,Speed,AdapterTypeId,NetConnectionStatus,GUID from win32_networkadapter where PhysicalAdapter=True and NetConnectionStatus>0"]' is not supported: Timeout occurred while gathering data.
+2026/10/01 01:07:49.446927 detected 10 time difference between queue checks, rescheduling tasks
+2026/10/01 01:08:11.628686 detected 12 time difference between queue checks, rescheduling tasks
+2026/10/01 01:08:11.628686 check 'perf_counter_en["\System\Threads"]' is not supported: Timeout occurred while gathering data.
+2026/10/01 01:08:11.628686 check 'service.info["StateRepository",state]' is not supported: Timeout occurred while gathering data.
+2026/10/01 01:08:11.628686 check 'perf_counter_en["\Processor Information(_total)\% Privileged Time"]' is not supported: Timeout occurred while gathering data.
+2026/10/01 01:08:11.628686 check 'perf_counter_en["\Processor Information(_total)\% User Time"]' is not supported: Timeout occurred while gathering data.
+2026/10/01 01:08:11.628686 check 'perf_counter_en["\System\Context Switches/sec"]' is not supported: Timeout occurred while gathering data.
+2026/10/01 01:08:11.628686 check 'perf_counter_en["\System\Processor Queue Length"]' is not supported: Timeout occurred while gathering data.
+2026/10/01 01:08:41.130677 check 'wmi.getall[root\cimv2,"select Name,Description,NetConnectionID,Speed,AdapterTypeId,NetConnectionStatus,GUID from win32_networkadapter where PhysicalAdapter=True and NetConnectionStatus>0"]' is not supported: Timeout occurred while gathering data.
+2026/10/01 01:38:31.896147 check 'service.info["DFSR",state]' is not supported: Timeout occurred while gathering data.
+2026/10/01 01:38:32.100244 check 'perf_counter_en["\PhysicalDisk(1 D:)\Disk Reads/sec",60]' is not supported: Timeout occurred while gathering data.
+2026/10/01 01:38:32.100244 [101] connection closed
+2026/10/01 01:38:32.152306 [101] connection closed
+2026/10/01 01:38:32.152306 [101] active check configuration update from host [pdc] started to fail
+2026/10/01 01:38:32.495023 [101] history upload to [10.1.7.20:10051] [pdc] started to fail
+2026/10/01 01:38:41.027829 check 'wmi.getall[root\cimv2,"select Name,Description,NetConnectionID,Speed,AdapterTypeId,NetConnectionStatus,GUID from win32_networkadapter where PhysicalAdapter=True and NetConnectionStatus>0"]' is not supported: Timeout occurred while gathering data.
+2026/10/01 01:39:32.033267 [101] active check configuration update from [10.1.7.20:10051] is working again
+2026/10/01 01:39:33.032132 [101] history upload to [10.1.7.20:10051] [pdc] is working again
+2026/10/01 02:08:12.042118 check 'system.cpu.load[all,avg]' is not supported: Invalid first parameter.
+2026/10/01 02:09:12.042468 check 'system.cpu.load[all,avg]' is not supported: Invalid first parameter.
+2026/10/01 02:10:12.042935 check 'system.cpu.load[all,avg]' is not supported: Invalid first parameter.
+2026/10/01 02:22:26.060625 check 'log["C:\Program Files\Zabbix Agent\zabbix_agentd.log"]' is not supported: Cannot obtain information for file "C:\Program Files\Zabbix Agent\zabbix_agentd.log": [2] No such file or directory
+2026/10/01 02:22:56.050829 check 'log["C:\Program Files\Zabbix Agent\zabbix_agentd.log"]' is not supported: Cannot obtain information for file "C:\Program Files\Zabbix Agent\zabbix_agentd.log": [2] No such file or directory
+2026/10/01 02:23:26.050888 check 'log["C:\Program Files\Zabbix Agent\zabbix_agentd.log"]' is not supported: Cannot obtain information for file "C:\Program Files\Zabbix Agent\zabbix_agentd.log": [2] No such file or directory
+2026/10/01 02:23:56.051221 check 'log["C:\Program Files\Zabbix Agent\zabbix_agentd.log"]' is not supported: Cannot obtain information for file "C:\Program Files\Zabbix Agent\zabbix_agentd.log": [2] No such file or directory
+2026/10/01 02:24:26.052683 check 'log["C:\Program Files\Zabbix Agent\zabbix_agentd.log"]' is not supported: Cannot obtain information for file "C:\Program Files\Zabbix Agent\zabbix_agentd.log": [2] No such file or directory
+2026/10/01 02:24:56.051661 check 'log["C:\Program Files\Zabbix Agent\zabbix_agentd.log"]' is not supported: Cannot obtain information for file "C:\Program Files\Zabbix Agent\zabbix_agentd.log": [2] No such file or directory
+2026/10/01 02:25:26.052124 check 'log["C:\Program Files\Zabbix Agent\zabbix_agentd.log"]' is not supported: Cannot obtain information for file "C:\Program Files\Zabbix Agent\zabbix_agentd.log": [2] No such file or directory
+2026/10/01 02:25:56.052302 check 'log["C:\Program Files\Zabbix Agent\zabbix_agentd.log"]' is not supported: Cannot obtain information for file "C:\Program Files\Zabbix Agent\zabbix_agentd.log": [2] No such file or directory
+2026/10/01 02:26:26.053470 check 'log["C:\Program Files\Zabbix Agent\zabbix_agentd.log"]' is not supported: Cannot obtain information for file "C:\Program Files\Zabbix Agent\zabbix_agentd.log": [2] No such file or directory
+2026/10/01 02:26:56.053063 check 'log["C:\Program Files\Zabbix Agent\zabbix_agentd.log"]' is not supported: Cannot obtain information for file "C:\Program Files\Zabbix Agent\zabbix_agentd.log": [2] No such file or directory
+2026/10/01 02:27:26.054281 check 'log["C:\Program Files\Zabbix Agent\zabbix_agentd.log"]' is not supported: Cannot obtain information for file "C:\Program Files\Zabbix Agent\zabbix_agentd.log": [2] No such file or directory
+2026/10/01 02:27:56.053534 check 'log["C:\Program Files\Zabbix Agent\zabbix_agentd.log"]' is not supported: Cannot obtain information for file "C:\Program Files\Zabbix Agent\zabbix_agentd.log": [2] No such file or directory
+2026/10/01 02:28:26.055745 check 'log["C:\Program Files\Zabbix Agent\zabbix_agentd.log"]' is not supported: Cannot obtain information for file "C:\Program Files\Zabbix Agent\zabbix_agentd.log": [2] No such file or directory
+2026/10/01 02:28:56.054887 check 'log["C:\Program Files\Zabbix Agent\zabbix_agentd.log"]' is not supported: Cannot obtain information for file "C:\Program Files\Zabbix Agent\zabbix_agentd.log": [2] No such file or directory
+2026/10/01 02:29:26.054589 check 'log["C:\Program Files\Zabbix Agent\zabbix_agentd.log"]' is not supported: Cannot obtain information for file "C:\Program Files\Zabbix Agent\zabbix_agentd.log": [2] No such file or directory
+2026/10/01 02:29:56.055056 check 'log["C:\Program Files\Zabbix Agent\zabbix_agentd.log"]' is not supported: Cannot obtain information for file "C:\Program Files\Zabbix Agent\zabbix_agentd.log": [2] No such file or directory
+2026/10/01 02:30:26.056440 check 'log["C:\Program Files\Zabbix Agent\zabbix_agentd.log"]' is not supported: Cannot obtain information for file "C:\Program Files\Zabbix Agent\zabbix_agentd.log": [2] No such file or directory
+2026/10/01 02:30:56.055417 check 'log["C:\Program Files\Zabbix Agent\zabbix_agentd.log"]' is not supported: Cannot obtain information for file "C:\Program Files\Zabbix Agent\zabbix_agentd.log": [2] No such file or directory
+2026/10/01 02:31:26.057281 check 'log["C:\Program Files\Zabbix Agent\zabbix_agentd.log"]' is not supported: Cannot obtain information for file "C:\Program Files\Zabbix Agent\zabbix_agentd.log": [2] No such file or directory
+2026/10/01 02:31:56.056083 check 'log["C:\Program Files\Zabbix Agent\zabbix_agentd.log"]' is not supported: Cannot obtain information for file "C:\Program Files\Zabbix Agent\zabbix_agentd.log": [2] No such file or directory
+2026/10/01 02:32:26.057473 check 'log["C:\Program Files\Zabbix Agent\zabbix_agentd.log"]' is not supported: Cannot obtain information for file "C:\Program Files\Zabbix Agent\zabbix_agentd.log": [2] No such file or directory
+2026/10/01 02:32:56.056564 check 'log["C:\Program Files\Zabbix Agent\zabbix_agentd.log"]' is not supported: Cannot obtain information for file "C:\Program Files\Zabbix Agent\zabbix_agentd.log": [2] No such file or directory
+2026/10/01 02:33:26.058706 check 'log["C:\Program Files\Zabbix Agent\zabbix_agentd.log"]' is not supported: Cannot obtain information for file "C:\Program Files\Zabbix Agent\zabbix_agentd.log": [2] No such file or directory
+2026/10/01 02:33:56.057357 check 'log["C:\Program Files\Zabbix Agent\zabbix_agentd.log"]' is not supported: Cannot obtain information for file "C:\Program Files\Zabbix Agent\zabbix_agentd.log": [2] No such file or directory
+2026/10/01 02:34:26.058076 check 'log["C:\Program Files\Zabbix Agent\zabbix_agentd.log"]' is not supported: Cannot obtain information for file "C:\Program Files\Zabbix Agent\zabbix_agentd.log": [2] No such file or directory
+2026/10/01 02:34:56.057584 check 'log["C:\Program Files\Zabbix Agent\zabbix_agentd.log"]' is not supported: Cannot obtain information for file "C:\Program Files\Zabbix Agent\zabbix_agentd.log": [2] No such file or directory
+2026/10/01 02:35:26.059828 check 'log["C:\Program Files\Zabbix Agent\zabbix_agentd.log"]' is not supported: Cannot obtain information for file "C:\Program Files\Zabbix Agent\zabbix_agentd.log": [2] No such file or directory
+2026/10/01 02:35:56.059177 check 'log["C:\Program Files\Zabbix Agent\zabbix_agentd.log"]' is not supported: Cannot obtain information for file "C:\Program Files\Zabbix Agent\zabbix_agentd.log": [2] No such file or directory
+2026/10/01 02:36:26.059959 check 'log["C:\Program Files\Zabbix Agent\zabbix_agentd.log"]' is not supported: Cannot obtain information for file "C:\Program Files\Zabbix Agent\zabbix_agentd.log": [2] No such file or directory
+2026/10/01 02:36:56.059647 check 'log["C:\Program Files\Zabbix Agent\zabbix_agentd.log"]' is not supported: Cannot obtain information for file "C:\Program Files\Zabbix Agent\zabbix_agentd.log": [2] No such file or directory
+2026/10/01 02:37:26.060085 check 'log["C:\Program Files\Zabbix Agent\zabbix_agentd.log"]' is not supported: Cannot obtain information for file "C:\Program Files\Zabbix Agent\zabbix_agentd.log": [2] No such file or directory
+2026/10/01 02:37:56.059621 check 'log["C:\Program Files\Zabbix Agent\zabbix_agentd.log"]' is not supported: Cannot obtain information for file "C:\Program Files\Zabbix Agent\zabbix_agentd.log": [2] No such file or directory
+2026/10/01 02:38:26.060515 check 'log["C:\Program Files\Zabbix Agent\zabbix_agentd.log"]' is not supported: Cannot obtain information for file "C:\Program Files\Zabbix Agent\zabbix_agentd.log": [2] No such file or directory
+2026/10/01 02:38:56.060917 check 'log["C:\Program Files\Zabbix Agent\zabbix_agentd.log"]' is not supported: Cannot obtain information for file "C:\Program Files\Zabbix Agent\zabbix_agentd.log": [2] No such file or directory
+2026/10/01 02:39:26.061697 check 'log["C:\Program Files\Zabbix Agent\zabbix_agentd.log"]' is not supported: Cannot obtain information for file "C:\Program Files\Zabbix Agent\zabbix_agentd.log": [2] No such file or directory
+2026/10/01 02:39:56.061314 check 'log["C:\Program Files\Zabbix Agent\zabbix_agentd.log"]' is not supported: Cannot obtain information for file "C:\Program Files\Zabbix Agent\zabbix_agentd.log": [2] No such file or directory
+2026/10/01 02:40:26.061740 check 'log["C:\Program Files\Zabbix Agent\zabbix_agentd.log"]' is not supported: Cannot obtain information for file "C:\Program Files\Zabbix Agent\zabbix_agentd.log": [2] No such file or directory
+2026/10/01 02:40:56.062278 check 'log["C:\Program Files\Zabbix Agent\zabbix_agentd.log"]' is not supported: Cannot obtain information for file "C:\Program Files\Zabbix Agent\zabbix_agentd.log": [2] No such file or directory
+2026/10/01 02:41:26.063065 check 'log["C:\Program Files\Zabbix Agent\zabbix_agentd.log"]' is not supported: Cannot obtain information for file "C:\Program Files\Zabbix Agent\zabbix_agentd.log": [2] No such file or directory
+2026/10/01 02:41:56.061853 check 'log["C:\Program Files\Zabbix Agent\zabbix_agentd.log"]' is not supported: Cannot obtain information for file "C:\Program Files\Zabbix Agent\zabbix_agentd.log": [2] No such file or directory
+2026/10/01 02:42:26.063567 check 'log["C:\Program Files\Zabbix Agent\zabbix_agentd.log"]' is not supported: Cannot obtain information for file "C:\Program Files\Zabbix Agent\zabbix_agentd.log": [2] No such file or directory
+2026/10/01 02:42:56.062681 check 'log["C:\Program Files\Zabbix Agent\zabbix_agentd.log"]' is not supported: Cannot obtain information for file "C:\Program Files\Zabbix Agent\zabbix_agentd.log": [2] No such file or directory
+2026/10/01 02:43:26.329022 check 'log["C:\Program Files\Zabbix Agent\zabbix_agentd.log"]' is not supported: Cannot obtain information for file "C:\Program Files\Zabbix Agent\zabbix_agentd.log": [2] No such file or directory
+2026/10/01 02:43:56.064395 check 'log["C:\Program Files\Zabbix Agent\zabbix_agentd.log"]' is not supported: Cannot obtain information for file "C:\Program Files\Zabbix Agent\zabbix_agentd.log": [2] No such file or directory
+2026/10/01 02:44:26.064257 check 'log["C:\Program Files\Zabbix Agent\zabbix_agentd.log"]' is not supported: Cannot obtain information for file "C:\Program Files\Zabbix Agent\zabbix_agentd.log": [2] No such file or directory
+2026/10/01 02:44:56.064473 check 'log["C:\Program Files\Zabbix Agent\zabbix_agentd.log"]' is not supported: Cannot obtain information for file "C:\Program Files\Zabbix Agent\zabbix_agentd.log": [2] No such file or directory
+2026/10/01 02:45:26.065242 check 'log["C:\Program Files\Zabbix Agent\zabbix_agentd.log"]' is not supported: Cannot obtain information for file "C:\Program Files\Zabbix Agent\zabbix_agentd.log": [2] No such file or directory
+2026/10/01 02:45:56.064188 check 'log["C:\Program Files\Zabbix Agent\zabbix_agentd.log"]' is not supported: Cannot obtain information for file "C:\Program Files\Zabbix Agent\zabbix_agentd.log": [2] No such file or directory
+2026/10/01 02:46:26.065155 check 'log["C:\Program Files\Zabbix Agent\zabbix_agentd.log"]' is not supported: Cannot obtain information for file "C:\Program Files\Zabbix Agent\zabbix_agentd.log": [2] No such file or directory
+2026/10/01 02:46:56.065093 check 'log["C:\Program Files\Zabbix Agent\zabbix_agentd.log"]' is not supported: Cannot obtain information for file "C:\Program Files\Zabbix Agent\zabbix_agentd.log": [2] No such file or directory
+2026/10/01 02:47:26.066076 check 'log["C:\Program Files\Zabbix Agent\zabbix_agentd.log"]' is not supported: Cannot obtain information for file "C:\Program Files\Zabbix Agent\zabbix_agentd.log": [2] No such file or directory
+2026/10/01 02:47:56.065712 check 'log["C:\Program Files\Zabbix Agent\zabbix_agentd.log"]' is not supported: Cannot obtain information for file "C:\Program Files\Zabbix Agent\zabbix_agentd.log": [2] No such file or directory
+2026/10/01 02:48:26.066371 check 'log["C:\Program Files\Zabbix Agent\zabbix_agentd.log"]' is not supported: Cannot obtain information for file "C:\Program Files\Zabbix Agent\zabbix_agentd.log": [2] No such file or directory
+2026/10/01 02:48:56.066543 check 'log["C:\Program Files\Zabbix Agent\zabbix_agentd.log"]' is not supported: Cannot obtain information for file "C:\Program Files\Zabbix Agent\zabbix_agentd.log": [2] No such file or directory
+2026/10/01 02:49:26.067012 check 'log["C:\Program Files\Zabbix Agent\zabbix_agentd.log"]' is not supported: Cannot obtain information for file "C:\Program Files\Zabbix Agent\zabbix_agentd.log": [2] No such file or directory
+2026/10/01 02:49:56.067769 check 'log["C:\Program Files\Zabbix Agent\zabbix_agentd.log"]' is not supported: Cannot obtain information for file "C:\Program Files\Zabbix Agent\zabbix_agentd.log": [2] No such file or directory
+2026/10/01 02:50:26.067040 check 'log["C:\Program Files\Zabbix Agent\zabbix_agentd.log"]' is not supported: Cannot obtain information for file "C:\Program Files\Zabbix Agent\zabbix_agentd.log": [2] No such file or directory
+2026/10/01 02:50:56.068143 check 'log["C:\Program Files\Zabbix Agent\zabbix_agentd.log"]' is not supported: Cannot obtain information for file "C:\Program Files\Zabbix Agent\zabbix_agentd.log": [2] No such file or directory
+2026/10/01 02:51:26.345131 check 'log["C:\Program Files\Zabbix Agent\zabbix_agentd.log"]' is not supported: Cannot obtain information for file "C:\Program Files\Zabbix Agent\zabbix_agentd.log": [2] No such file or directory
+2026/10/01 02:51:56.068053 check 'log["C:\Program Files\Zabbix Agent\zabbix_agentd.log"]' is not supported: Cannot obtain information for file "C:\Program Files\Zabbix Agent\zabbix_agentd.log": [2] No such file or directory
+2026/10/01 02:52:26.069376 check 'log["C:\Program Files\Zabbix Agent\zabbix_agentd.log"]' is not supported: Cannot obtain information for file "C:\Program Files\Zabbix Agent\zabbix_agentd.log": [2] No such file or directory
+2026/10/01 02:52:56.068382 check 'log["C:\Program Files\Zabbix Agent 2\zabbix_agentd.log"]' is not supported: Cannot obtain information for file "C:\Program Files\Zabbix Agent 2\zabbix_agentd.log": [2] No such file or directory
+2026/10/01 02:53:26.070540 check 'log["C:\Program Files\Zabbix Agent 2\zabbix_agentd.log"]' is not supported: Cannot obtain information for file "C:\Program Files\Zabbix Agent 2\zabbix_agentd.log": [2] No such file or directory
+2026/10/01 02:53:56.069355 check 'log["C:\Program Files\Zabbix Agent 2\zabbix_agentd.log"]' is not supported: Cannot obtain information for file "C:\Program Files\Zabbix Agent 2\zabbix_agentd.log": [2] No such file or directory
+2026/10/01 03:12:57.882899 Zabbix Agent 2 stopped. (7.0.26)
+2026/10/01 03:13:01.865107 Starting Zabbix Agent 2 (7.0.26)
+2026/10/01 03:13:01.896779 OpenSSL library (OpenSSL 3.5.1 1 Jul 2025) initialized
+2026/10/01 03:13:01.896779 using configuration file: C:\Program Files\Zabbix Agent 2\zabbix_agent2.conf
+2026/10/01 03:13:01.896779 using plugin 'Agent' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 03:13:01.896779 using plugin 'Ceph' (built-in) providing following interfaces: exporter, runner, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 03:13:01.896779 using plugin 'Cpu' (built-in) providing following interfaces: exporter, runner, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 03:13:01.896779 using plugin 'DNS' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 03:13:01.896779 using plugin 'File' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 03:13:01.896779 using plugin 'Log' (built-in) providing following interfaces: exporter, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 03:13:01.896779 using plugin 'MQTT' (built-in) providing following interfaces: watcher, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 03:13:01.896779 using plugin 'Memcached' (built-in) providing following interfaces: exporter, runner, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 03:13:01.896779 using plugin 'Memory' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 03:13:01.897780 using plugin 'Modbus' (built-in) providing following interfaces: exporter, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 03:13:01.897780 using plugin 'Mysql' (built-in) providing following interfaces: exporter, runner, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 03:13:01.897780 using plugin 'NetIf' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 03:13:01.897780 using plugin 'Oracle' (built-in) providing following interfaces: exporter, runner, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 03:13:01.897780 using plugin 'Proc' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 03:13:01.897780 using plugin 'Redis' (built-in) providing following interfaces: exporter, runner, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 03:13:01.897780 using plugin 'Registry' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 03:13:01.897780 using plugin 'Smart' (built-in) providing following interfaces: exporter, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 03:13:01.897780 using plugin 'Sw' (built-in) providing following interfaces: exporter, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 03:13:01.897780 using plugin 'Swap' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 03:13:01.897780 using plugin 'SystemRun' (built-in) providing following interfaces: exporter, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 03:13:01.897780 using plugin 'TCP' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 03:13:01.897780 using plugin 'UDP' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 03:13:01.897780 using plugin 'Uname' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 03:13:01.897780 using plugin 'Uptime' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 03:13:01.897780 using plugin 'UserParameter' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 03:13:01.897780 using plugin 'Users' (built-in) providing following interfaces: exporter, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 03:13:01.897780 using plugin 'VFSDir' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 03:13:01.897780 using plugin 'VMemory' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 03:13:01.897780 using plugin 'VfsFs' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 03:13:01.898778 using plugin 'WebCertificate' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 03:13:01.898778 using plugin 'WebPage' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 03:13:01.898778 using plugin 'WindowsEventlog' (built-in) providing following interfaces: exporter, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 03:13:01.901520 using plugin 'WindowsPerfInstance' (built-in) providing following interfaces: exporter, maximum capacity: 1, active checks on start enabled: false
+2026/10/01 03:13:01.901520 using plugin 'WindowsPerfMon' (built-in) providing following interfaces: exporter, runner, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 03:13:01.901520 using plugin 'WindowsServices' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 03:13:01.901520 using plugin 'Wmi' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 03:13:01.901520 using plugin 'ZabbixAsync' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 03:13:01.901520 using plugin 'ZabbixStats' (built-in) providing following interfaces: exporter, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 03:13:01.901520 using plugin 'ZabbixSync' (built-in) providing following interfaces: exporter, maximum capacity: 1, active checks on start enabled: false
+2026/10/01 03:13:02.306537 Plugin communication protocol version is 6.4.0
+2026/10/01 03:13:03.000268 Zabbix Agent2 hostname: [pdc]
+2026/10/01 03:16:10.008104 check 'wmi.get[root/cimv2,"Select NumberOfLogicalProcessors from Win32_ComputerSystem"]' is not supported: Timeout occurred while gathering data.
+2026/10/01 03:30:34.013690 check 'adds-replication' is not supported: Timeout occurred while gathering data.
+2026/10/01 03:32:48.871755 Zabbix Agent 2 stopped. (7.0.26)
+2026/10/01 03:32:50.456830 Starting Zabbix Agent 2 (7.0.26)
+2026/10/01 03:32:50.484828 OpenSSL library (OpenSSL 3.5.1 1 Jul 2025) initialized
+2026/10/01 03:32:50.484828 using configuration file: C:\Program Files\Zabbix Agent 2\zabbix_agent2.conf
+2026/10/01 03:32:50.485831 using plugin 'Agent' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 03:32:50.485831 using plugin 'Ceph' (built-in) providing following interfaces: exporter, runner, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 03:32:50.485831 using plugin 'Cpu' (built-in) providing following interfaces: exporter, runner, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 03:32:50.485831 using plugin 'DNS' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 03:32:50.485831 using plugin 'File' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 03:32:50.485831 using plugin 'Log' (built-in) providing following interfaces: exporter, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 03:32:50.485831 using plugin 'MQTT' (built-in) providing following interfaces: watcher, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 03:32:50.485831 using plugin 'Memcached' (built-in) providing following interfaces: exporter, runner, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 03:32:50.485831 using plugin 'Memory' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 03:32:50.485831 using plugin 'Modbus' (built-in) providing following interfaces: exporter, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 03:32:50.485831 using plugin 'Mysql' (built-in) providing following interfaces: exporter, runner, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 03:32:50.485831 using plugin 'NetIf' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 03:32:50.485831 using plugin 'Oracle' (built-in) providing following interfaces: exporter, runner, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 03:32:50.485831 using plugin 'Proc' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 03:32:50.485831 using plugin 'Redis' (built-in) providing following interfaces: exporter, runner, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 03:32:50.485831 using plugin 'Registry' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 03:32:50.485831 using plugin 'Smart' (built-in) providing following interfaces: exporter, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 03:32:50.485831 using plugin 'Sw' (built-in) providing following interfaces: exporter, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 03:32:50.486836 using plugin 'Swap' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 03:32:50.486836 using plugin 'SystemRun' (built-in) providing following interfaces: exporter, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 03:32:50.486836 using plugin 'TCP' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 03:32:50.486836 using plugin 'UDP' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 03:32:50.486836 using plugin 'Uname' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 03:32:50.486836 using plugin 'Uptime' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 03:32:50.486836 using plugin 'UserParameter' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 03:32:50.486836 using plugin 'Users' (built-in) providing following interfaces: exporter, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 03:32:50.486836 using plugin 'VFSDir' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 03:32:50.486836 using plugin 'VMemory' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 03:32:50.486836 using plugin 'VfsFs' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 03:32:50.486836 using plugin 'WebCertificate' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 03:32:50.486836 using plugin 'WebPage' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 03:32:50.486836 using plugin 'WindowsEventlog' (built-in) providing following interfaces: exporter, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 03:32:50.486836 using plugin 'WindowsPerfInstance' (built-in) providing following interfaces: exporter, maximum capacity: 1, active checks on start enabled: false
+2026/10/01 03:32:50.486836 using plugin 'WindowsPerfMon' (built-in) providing following interfaces: exporter, runner, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 03:32:50.486836 using plugin 'WindowsServices' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 03:32:50.486836 using plugin 'Wmi' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 03:32:50.486836 using plugin 'ZabbixAsync' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 03:32:50.486836 using plugin 'ZabbixStats' (built-in) providing following interfaces: exporter, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 03:32:50.487829 using plugin 'ZabbixSync' (built-in) providing following interfaces: exporter, maximum capacity: 1, active checks on start enabled: false
+2026/10/01 03:32:51.016537 Plugin communication protocol version is 6.4.0
+2026/10/01 03:32:52.000247 Zabbix Agent2 hostname: [pdc]
+2026/10/01 03:48:05.783069 Zabbix Agent 2 stopped. (7.0.26)
+2026/10/01 03:48:07.233341 Starting Zabbix Agent 2 (7.0.26)
+2026/10/01 03:48:07.256341 OpenSSL library (OpenSSL 3.5.1 1 Jul 2025) initialized
+2026/10/01 03:48:07.257342 using configuration file: C:\Program Files\Zabbix Agent 2\zabbix_agent2.conf
+2026/10/01 03:48:07.257342 using plugin 'Agent' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 03:48:07.257342 using plugin 'Ceph' (built-in) providing following interfaces: exporter, runner, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 03:48:07.257342 using plugin 'Cpu' (built-in) providing following interfaces: exporter, runner, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 03:48:07.257342 using plugin 'DNS' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 03:48:07.257342 using plugin 'File' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 03:48:07.257342 using plugin 'Log' (built-in) providing following interfaces: exporter, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 03:48:07.257342 using plugin 'MQTT' (built-in) providing following interfaces: watcher, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 03:48:07.257342 using plugin 'Memcached' (built-in) providing following interfaces: exporter, runner, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 03:48:07.257342 using plugin 'Memory' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 03:48:07.257342 using plugin 'Modbus' (built-in) providing following interfaces: exporter, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 03:48:07.257342 using plugin 'Mysql' (built-in) providing following interfaces: exporter, runner, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 03:48:07.257342 using plugin 'NetIf' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 03:48:07.257342 using plugin 'Oracle' (built-in) providing following interfaces: exporter, runner, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 03:48:07.257342 using plugin 'Proc' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 03:48:07.258341 using plugin 'Redis' (built-in) providing following interfaces: exporter, runner, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 03:48:07.258341 using plugin 'Registry' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 03:48:07.258341 using plugin 'Smart' (built-in) providing following interfaces: exporter, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 03:48:07.258341 using plugin 'Sw' (built-in) providing following interfaces: exporter, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 03:48:07.258341 using plugin 'Swap' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 03:48:07.258341 using plugin 'SystemRun' (built-in) providing following interfaces: exporter, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 03:48:07.258341 using plugin 'TCP' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 03:48:07.258341 using plugin 'UDP' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 03:48:07.258341 using plugin 'Uname' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 03:48:07.258341 using plugin 'Uptime' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 03:48:07.258341 using plugin 'UserParameter' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 03:48:07.258341 using plugin 'Users' (built-in) providing following interfaces: exporter, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 03:48:07.258341 using plugin 'VFSDir' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 03:48:07.258341 using plugin 'VMemory' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 03:48:07.258341 using plugin 'VfsFs' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 03:48:07.258341 using plugin 'WebCertificate' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 03:48:07.258341 using plugin 'WebPage' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 03:48:07.258341 using plugin 'WindowsEventlog' (built-in) providing following interfaces: exporter, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 03:48:07.258341 using plugin 'WindowsPerfInstance' (built-in) providing following interfaces: exporter, maximum capacity: 1, active checks on start enabled: false
+2026/10/01 03:48:07.258341 using plugin 'WindowsPerfMon' (built-in) providing following interfaces: exporter, runner, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 03:48:07.258341 using plugin 'WindowsServices' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 03:48:07.258341 using plugin 'Wmi' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 03:48:07.259339 using plugin 'ZabbixAsync' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 03:48:07.259339 using plugin 'ZabbixStats' (built-in) providing following interfaces: exporter, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 03:48:07.259339 using plugin 'ZabbixSync' (built-in) providing following interfaces: exporter, maximum capacity: 1, active checks on start enabled: false
+2026/10/01 03:48:07.646326 Plugin communication protocol version is 6.4.0
+2026/10/01 03:48:08.000718 Zabbix Agent2 hostname: [pdc]
+2026/10/01 04:10:04.037749 check 'adds-replication' is not supported: Timeout occurred while gathering data.
+2026/10/01 04:25:52.358378 Zabbix Agent 2 stopped. (7.0.26)
+2026/10/01 04:30:14.866640 Starting Zabbix Agent 2 (7.0.26)
+2026/10/01 04:30:14.890861 OpenSSL library (OpenSSL 3.5.1 1 Jul 2025) initialized
+2026/10/01 04:30:14.891861 using configuration file: C:\Program Files\Zabbix Agent 2\zabbix_agent2.conf
+2026/10/01 04:30:14.891861 using plugin 'Agent' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 04:30:14.891861 using plugin 'Ceph' (built-in) providing following interfaces: exporter, runner, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 04:30:14.891861 using plugin 'Cpu' (built-in) providing following interfaces: exporter, runner, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 04:30:14.891861 using plugin 'DNS' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 04:30:14.891861 using plugin 'File' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 04:30:14.891861 using plugin 'Log' (built-in) providing following interfaces: exporter, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 04:30:14.891861 using plugin 'MQTT' (built-in) providing following interfaces: watcher, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 04:30:14.891861 using plugin 'Memcached' (built-in) providing following interfaces: exporter, runner, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 04:30:14.891861 using plugin 'Memory' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 04:30:14.891861 using plugin 'Modbus' (built-in) providing following interfaces: exporter, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 04:30:14.891861 using plugin 'Mysql' (built-in) providing following interfaces: exporter, runner, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 04:30:14.891861 using plugin 'NetIf' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 04:30:14.891861 using plugin 'Oracle' (built-in) providing following interfaces: exporter, runner, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 04:30:14.891861 using plugin 'Proc' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 04:30:14.891861 using plugin 'Redis' (built-in) providing following interfaces: exporter, runner, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 04:30:14.892972 using plugin 'Registry' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 04:30:14.892972 using plugin 'Smart' (built-in) providing following interfaces: exporter, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 04:30:14.892972 using plugin 'Sw' (built-in) providing following interfaces: exporter, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 04:30:14.892972 using plugin 'Swap' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 04:30:14.892972 using plugin 'SystemRun' (built-in) providing following interfaces: exporter, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 04:30:14.892972 using plugin 'TCP' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 04:30:14.892972 using plugin 'UDP' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 04:30:14.892972 using plugin 'Uname' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 04:30:14.892972 using plugin 'Uptime' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 04:30:14.892972 using plugin 'UserParameter' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 04:30:14.892972 using plugin 'Users' (built-in) providing following interfaces: exporter, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 04:30:14.892972 using plugin 'VFSDir' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 04:30:14.892972 using plugin 'VMemory' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 04:30:14.892972 using plugin 'VfsFs' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 04:30:14.892972 using plugin 'WebCertificate' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 04:30:14.892972 using plugin 'WebPage' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 04:30:14.892972 using plugin 'WindowsEventlog' (built-in) providing following interfaces: exporter, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 04:30:14.892972 using plugin 'WindowsPerfInstance' (built-in) providing following interfaces: exporter, maximum capacity: 1, active checks on start enabled: false
+2026/10/01 04:30:14.893975 using plugin 'WindowsPerfMon' (built-in) providing following interfaces: exporter, runner, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 04:30:14.893975 using plugin 'WindowsServices' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 04:30:14.893975 using plugin 'Wmi' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 04:30:14.893975 using plugin 'ZabbixAsync' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 04:30:14.893975 using plugin 'ZabbixStats' (built-in) providing following interfaces: exporter, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 04:30:14.893975 using plugin 'ZabbixSync' (built-in) providing following interfaces: exporter, maximum capacity: 1, active checks on start enabled: false
+2026/10/01 04:30:15.293320 Plugin communication protocol version is 6.4.0
+2026/10/01 04:30:16.000167 Zabbix Agent2 hostname: [pdc]
+2026/10/01 04:31:04.001881 check 'adds-replication' is not supported: Timeout occurred while gathering data.
+2026/10/01 04:42:04.272816 check 'adds-replication' is not supported: Timeout occurred while gathering data.
+2026/10/01 05:23:34.046333 check 'adds-replication' is not supported: Timeout occurred while gathering data.
+2026/10/01 05:28:14.038670 check 'adds-replication' is not supported: Timeout occurred while gathering data.
+2026/10/01 05:28:41.116656 check 'adds-replication' is not supported: Failed to execute command: failed to start command (powershell.exe -NoProfile -NonInteractive -ExecutionPolicy Bypass -Command "if (Test-Path 'C:\Program Files\Zabbix Agent 2\scripts\repl_status.txt') { Get-Content 'C:\Program Files\Zabbix Agent 2\scripts\repl_status.txt' -Raw } else { Write-Output 'CRITICAL: Cache file not found yet.' }", path: ): fork/exec C:\Windows\system32\cmd.exe: The paging file is too small for this operation to complete.
+2026/10/01 05:36:34.121658 check 'adds-replication' is not supported: Timeout occurred while gathering data.
+2026/10/01 05:36:41.337430 check 'adds-replication' is not supported: Failed to execute command: failed to start command (powershell.exe -NoProfile -NonInteractive -ExecutionPolicy Bypass -Command "if (Test-Path 'C:\Program Files\Zabbix Agent 2\scripts\repl_status.txt') { Get-Content 'C:\Program Files\Zabbix Agent 2\scripts\repl_status.txt' -Raw } else { Write-Output 'CRITICAL: Cache file not found yet.' }", path: ): fork/exec C:\Windows\system32\cmd.exe: The paging file is too small for this operation to complete.
+2026/10/01 05:36:54.044832 check 'adds-replication' is not supported: Timeout occurred while gathering data.
+2026/10/01 05:37:04.043954 check 'adds-replication' is not supported: Timeout occurred while gathering data.
+2026/10/01 05:37:14.043661 check 'adds-replication' is not supported: Timeout occurred while gathering data.
+2026/10/01 05:37:24.083254 check 'adds-replication' is not supported: Timeout occurred while gathering data.
+2026/10/01 05:37:34.042384 check 'adds-replication' is not supported: Timeout occurred while gathering data.
+2026/10/01 05:46:44.185325 check 'adds-replication' is not supported: Timeout occurred while gathering data.
+2026/10/01 05:58:54.057377 check 'adds-replication' is not supported: Timeout occurred while gathering data.
+2026/10/01 05:59:54.057596 check 'adds-replication' is not supported: Timeout occurred while gathering data.
+2026/10/01 06:02:14.198272 check 'adds-replication' is not supported: Timeout occurred while gathering data.
+2026/10/01 06:08:04.062157 check 'adds-replication' is not supported: Timeout occurred while gathering data.
+2026/10/01 06:12:51.268190 check 'adds-replication' is not supported: Failed to execute command: failed to start command (powershell.exe -NoProfile -NonInteractive -ExecutionPolicy Bypass -Command "if (Test-Path 'C:\Program Files\Zabbix Agent 2\scripts\repl_status.txt') { Get-Content 'C:\Program Files\Zabbix Agent 2\scripts\repl_status.txt' -Raw } else { Write-Output 'CRITICAL: Cache file not found yet.' }", path: ): fork/exec C:\Windows\system32\cmd.exe: The paging file is too small for this operation to complete.
+2026/10/01 06:29:18.639216 Starting Zabbix Agent 2 (7.0.26)
+2026/10/01 06:29:18.668126 OpenSSL library (OpenSSL 3.5.1 1 Jul 2025) initialized
+2026/10/01 06:29:18.681894 using configuration file: C:\Program Files\Zabbix Agent 2\zabbix_agent2.conf
+2026/10/01 06:29:18.681894 using plugin 'Agent' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 06:29:18.681894 using plugin 'Ceph' (built-in) providing following interfaces: exporter, runner, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 06:29:18.681894 using plugin 'Cpu' (built-in) providing following interfaces: exporter, runner, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 06:29:18.681894 using plugin 'DNS' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 06:29:18.681894 using plugin 'File' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 06:29:18.681894 using plugin 'Log' (built-in) providing following interfaces: exporter, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 06:29:18.681894 using plugin 'MQTT' (built-in) providing following interfaces: watcher, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 06:29:18.681894 using plugin 'Memcached' (built-in) providing following interfaces: exporter, runner, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 06:29:18.681894 using plugin 'Memory' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 06:29:18.681894 using plugin 'Modbus' (built-in) providing following interfaces: exporter, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 06:29:18.681894 using plugin 'Mysql' (built-in) providing following interfaces: exporter, runner, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 06:29:18.681894 using plugin 'NetIf' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 06:29:18.681894 using plugin 'Oracle' (built-in) providing following interfaces: exporter, runner, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 06:29:18.681894 using plugin 'Proc' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 06:29:18.681894 using plugin 'Redis' (built-in) providing following interfaces: exporter, runner, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 06:29:18.681894 using plugin 'Registry' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 06:29:18.681894 using plugin 'Smart' (built-in) providing following interfaces: exporter, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 06:29:18.681894 using plugin 'Sw' (built-in) providing following interfaces: exporter, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 06:29:18.681894 using plugin 'Swap' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 06:29:18.681894 using plugin 'SystemRun' (built-in) providing following interfaces: exporter, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 06:29:18.681894 using plugin 'TCP' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 06:29:18.681894 using plugin 'UDP' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 06:29:18.681894 using plugin 'Uname' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 06:29:18.681894 using plugin 'Uptime' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 06:29:18.681894 using plugin 'UserParameter' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 06:29:18.681894 using plugin 'Users' (built-in) providing following interfaces: exporter, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 06:29:18.681894 using plugin 'VFSDir' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 06:29:18.681894 using plugin 'VMemory' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 06:29:18.681894 using plugin 'VfsFs' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 06:29:18.681894 using plugin 'WebCertificate' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 06:29:18.681894 using plugin 'WebPage' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 06:29:18.681894 using plugin 'WindowsEventlog' (built-in) providing following interfaces: exporter, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 06:29:18.681894 using plugin 'WindowsPerfInstance' (built-in) providing following interfaces: exporter, maximum capacity: 1, active checks on start enabled: false
+2026/10/01 06:29:18.681894 using plugin 'WindowsPerfMon' (built-in) providing following interfaces: exporter, runner, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 06:29:18.681894 using plugin 'WindowsServices' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 06:29:18.681894 using plugin 'Wmi' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 06:29:18.681894 using plugin 'ZabbixAsync' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 06:29:18.681894 using plugin 'ZabbixStats' (built-in) providing following interfaces: exporter, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 06:29:18.681894 using plugin 'ZabbixSync' (built-in) providing following interfaces: exporter, maximum capacity: 1, active checks on start enabled: false
+2026/10/01 06:29:18.984084 Plugin communication protocol version is 6.4.0
+2026/10/01 06:29:19.004123 Zabbix Agent2 hostname: [pdc]
+2026/10/01 06:30:28.886063 Zabbix Agent 2 stopped. (7.0.26)
+2026/10/01 06:30:29.200261 Starting Zabbix Agent 2 (7.0.26)
+2026/10/01 06:30:29.215899 OpenSSL library (OpenSSL 3.5.1 1 Jul 2025) initialized
+2026/10/01 06:30:29.215899 using configuration file: C:\Program Files\Zabbix Agent 2\zabbix_agent2.conf
+2026/10/01 06:30:29.215899 using plugin 'Agent' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 06:30:29.215899 using plugin 'Ceph' (built-in) providing following interfaces: exporter, runner, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 06:30:29.215899 using plugin 'Cpu' (built-in) providing following interfaces: exporter, runner, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 06:30:29.215899 using plugin 'DNS' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 06:30:29.215899 using plugin 'File' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 06:30:29.215899 using plugin 'Log' (built-in) providing following interfaces: exporter, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 06:30:29.215899 using plugin 'MQTT' (built-in) providing following interfaces: watcher, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 06:30:29.215899 using plugin 'Memcached' (built-in) providing following interfaces: exporter, runner, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 06:30:29.215899 using plugin 'Memory' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 06:30:29.215899 using plugin 'Modbus' (built-in) providing following interfaces: exporter, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 06:30:29.215899 using plugin 'Mysql' (built-in) providing following interfaces: exporter, runner, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 06:30:29.215899 using plugin 'NetIf' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 06:30:29.215899 using plugin 'Oracle' (built-in) providing following interfaces: exporter, runner, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 06:30:29.215899 using plugin 'Proc' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 06:30:29.215899 using plugin 'Redis' (built-in) providing following interfaces: exporter, runner, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 06:30:29.215899 using plugin 'Registry' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 06:30:29.215899 using plugin 'Smart' (built-in) providing following interfaces: exporter, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 06:30:29.215899 using plugin 'Sw' (built-in) providing following interfaces: exporter, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 06:30:29.215899 using plugin 'Swap' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 06:30:29.215899 using plugin 'SystemRun' (built-in) providing following interfaces: exporter, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 06:30:29.215899 using plugin 'TCP' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 06:30:29.215899 using plugin 'UDP' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 06:30:29.215899 using plugin 'Uname' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 06:30:29.215899 using plugin 'Uptime' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 06:30:29.215899 using plugin 'UserParameter' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 06:30:29.215899 using plugin 'Users' (built-in) providing following interfaces: exporter, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 06:30:29.215899 using plugin 'VFSDir' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 06:30:29.215899 using plugin 'VMemory' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 06:30:29.215899 using plugin 'VfsFs' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 06:30:29.215899 using plugin 'WebCertificate' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 06:30:29.215899 using plugin 'WebPage' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 06:30:29.215899 using plugin 'WindowsEventlog' (built-in) providing following interfaces: exporter, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 06:30:29.215899 using plugin 'WindowsPerfInstance' (built-in) providing following interfaces: exporter, maximum capacity: 1, active checks on start enabled: false
+2026/10/01 06:30:29.215899 using plugin 'WindowsPerfMon' (built-in) providing following interfaces: exporter, runner, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 06:30:29.215899 using plugin 'WindowsServices' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 06:30:29.215899 using plugin 'Wmi' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 06:30:29.215899 using plugin 'ZabbixAsync' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 06:30:29.215899 using plugin 'ZabbixStats' (built-in) providing following interfaces: exporter, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/10/01 06:30:29.215899 using plugin 'ZabbixSync' (built-in) providing following interfaces: exporter, maximum capacity: 1, active checks on start enabled: false
+2026/10/01 06:30:29.515540 Plugin communication protocol version is 6.4.0
+2026/10/01 06:30:30.000139 Zabbix Agent2 hostname: [pdc]
+2026/10/01 06:33:11.714794 connection from "10.1.2.20" rejected, allowed hosts: "10.1.7.20"
+2026/10/01 06:39:35.017211 check 'adds-replication' is not supported: Timeout occurred while gathering data.
+2026/10/01 06:39:47.777613 [101] connection closed
+2026/10/01 06:39:47.778612 [101] active check configuration update from host [pdc] started to fail
+2026/10/01 06:39:48.009504 [101] connection closed
+2026/10/01 06:39:48.009504 [101] history upload to [10.1.7.20:10051] [pdc] started to fail
+2026/10/01 06:39:54.009820 check 'adds-replication' is not supported: Timeout occurred while gathering data.
+2026/10/01 06:40:14.013421 check 'adds-replication' is not supported: Timeout occurred while gathering data.
+2026/10/01 06:40:47.186086 [101] active check configuration update from [10.1.7.20:10051] is working again
+2026/10/01 06:40:52.145893 [101] history upload to [10.1.7.20:10051] [pdc] is working again
+2026/10/01 07:13:55.128258 check 'vfs.file.contents[C:\Program Files\Zabbix Agent 2\scripts\repl_status.txt]' is not supported: Timeout occurred while gathering data.
+2026/10/01 07:42:02.227352 [101] connection closed
+2026/10/01 07:42:02.227352 [101] history upload to [10.1.7.20:10051] [pdc] started to fail
+2026/10/01 07:42:04.259282 stopping service due to syscall signal
+2026/10/01 07:42:04.290447 Zabbix Agent 2 stopped. (7.0.26)
+2026/10/03 04:24:43.113184 Starting Zabbix Agent 2 (7.0.26)
+2026/10/03 04:24:43.342059 OpenSSL library (OpenSSL 3.5.1 1 Jul 2025) initialized
+2026/10/03 04:24:43.342059 using configuration file: C:\Program Files\Zabbix Agent 2\zabbix_agent2.conf
+2026/10/03 04:24:43.351393 using plugin 'Agent' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/03 04:24:43.351905 using plugin 'Ceph' (built-in) providing following interfaces: exporter, runner, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/10/03 04:24:43.351905 using plugin 'Cpu' (built-in) providing following interfaces: exporter, runner, maximum capacity: 1000, active checks on start enabled: false
+2026/10/03 04:24:43.351905 using plugin 'DNS' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/03 04:24:43.351905 using plugin 'File' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/03 04:24:43.351905 using plugin 'Log' (built-in) providing following interfaces: exporter, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/10/03 04:24:43.351905 using plugin 'MQTT' (built-in) providing following interfaces: watcher, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/10/03 04:24:43.351905 using plugin 'Memcached' (built-in) providing following interfaces: exporter, runner, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/10/03 04:24:43.351905 using plugin 'Memory' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/03 04:24:43.351905 using plugin 'Modbus' (built-in) providing following interfaces: exporter, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/10/03 04:24:43.351905 using plugin 'Mysql' (built-in) providing following interfaces: exporter, runner, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/10/03 04:24:43.351905 using plugin 'NetIf' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/03 04:24:43.351905 using plugin 'Oracle' (built-in) providing following interfaces: exporter, runner, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/10/03 04:24:43.351905 using plugin 'Proc' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/03 04:24:43.351905 using plugin 'Redis' (built-in) providing following interfaces: exporter, runner, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/10/03 04:24:43.351905 using plugin 'Registry' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/03 04:24:43.351905 using plugin 'Smart' (built-in) providing following interfaces: exporter, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/10/03 04:24:43.351905 using plugin 'Sw' (built-in) providing following interfaces: exporter, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/10/03 04:24:43.351905 using plugin 'Swap' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/03 04:24:43.351905 using plugin 'SystemRun' (built-in) providing following interfaces: exporter, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/10/03 04:24:43.351905 using plugin 'TCP' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/03 04:24:43.351905 using plugin 'UDP' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/03 04:24:43.351905 using plugin 'Uname' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/03 04:24:43.351905 using plugin 'Uptime' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/03 04:24:43.351905 using plugin 'UserParameter' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/03 04:24:43.351905 using plugin 'Users' (built-in) providing following interfaces: exporter, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/10/03 04:24:43.351905 using plugin 'VFSDir' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/03 04:24:43.351905 using plugin 'VMemory' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/03 04:24:43.351905 using plugin 'VfsFs' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/03 04:24:43.351905 using plugin 'WebCertificate' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/03 04:24:43.351905 using plugin 'WebPage' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/03 04:24:43.351905 using plugin 'WindowsEventlog' (built-in) providing following interfaces: exporter, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/10/03 04:24:43.351905 using plugin 'WindowsPerfInstance' (built-in) providing following interfaces: exporter, maximum capacity: 1, active checks on start enabled: false
+2026/10/03 04:24:43.351905 using plugin 'WindowsPerfMon' (built-in) providing following interfaces: exporter, runner, maximum capacity: 1000, active checks on start enabled: false
+2026/10/03 04:24:43.351905 using plugin 'WindowsServices' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/03 04:24:43.351905 using plugin 'Wmi' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/03 04:24:43.351905 using plugin 'ZabbixAsync' (built-in) providing following interfaces: exporter, maximum capacity: 1000, active checks on start enabled: false
+2026/10/03 04:24:43.351905 using plugin 'ZabbixStats' (built-in) providing following interfaces: exporter, configurator, maximum capacity: 1000, active checks on start enabled: false
+2026/10/03 04:24:43.351905 using plugin 'ZabbixSync' (built-in) providing following interfaces: exporter, maximum capacity: 1, active checks on start enabled: false
+2026/10/03 04:24:43.723586 Plugin communication protocol version is 6.4.0
+2026/10/03 04:24:44.001098 Zabbix Agent2 hostname: [pdc]
+2026/10/03 04:41:04.022823 check 'vfs.file.contents[C:\Program Files\Zabbix Agent 2\scripts\repl_status.txt]' is not supported: Timeout occurred while gathering data.
+2026/10/03 04:41:14.023515 check 'vfs.file.contents[C:\Program Files\Zabbix Agent 2\scripts\repl_status.txt]' is not supported: Timeout occurred while gathering data.
+2026/10/03 04:43:10.023775 check 'wmi.get[root/cimv2,"Select NumberOfLogicalProcessors from Win32_ComputerSystem"]' is not supported: Timeout occurred while gathering data.
+2026/10/03 06:30:00.597232 check 'service.info["Spooler",state]' is not supported: Timeout occurred while gathering data.
+2026/10/03 06:30:01.086519 [101] connection closed
+2026/10/03 06:30:01.086519 [101] history upload to [10.1.7.20:10051] [pdc] started to fail
+2026/10/03 06:30:01.153965 [101] history upload to [10.1.7.20:10051] [pdc] is working again
+2026/10/03 06:30:10.206123 check 'wmi.get[root/cimv2,"Select NumberOfLogicalProcessors from Win32_ComputerSystem"]' is not supported: Timeout occurred while gathering data.
+2026/10/03 06:30:41.150825 check 'wmi.getall[root\cimv2,"select Name,Description,NetConnectionID,Speed,AdapterTypeId,NetConnectionStatus,GUID from win32_networkadapter where PhysicalAdapter=True and NetConnectionStatus>0"]' is not supported: Timeout occurred while gathering data.
+2026/10/03 06:44:47.857662 [101] connection closed
+2026/10/03 06:44:47.857662 [101] history upload to [10.1.7.20:10051] [pdc] started to fail
+2026/10/03 06:44:56.685866 detected 18 time difference between queue checks, rescheduling tasks
+2026/10/03 06:44:56.685866 check 'wmi.getall[root\cimv2,"select Name,Description,NetConnectionID,Speed,AdapterTypeId,NetConnectionStatus,GUID from win32_networkadapter where PhysicalAdapter=True and NetConnectionStatus>0"]' is not supported: Timeout occurred while gathering data.
+2026/10/03 06:45:11.733954 [101] history upload to [10.1.7.20:10051] [pdc] is working again
+2026/10/03 06:45:13.847385 check 'wmi.get[root/cimv2,"Select NumberOfLogicalProcessors from Win32_ComputerSystem"]' is not supported: Timeout occurred while gathering data.
+2026/10/03 06:46:13.011391 check 'wmi.get[root/cimv2,"Select NumberOfLogicalProcessors from Win32_ComputerSystem"]' is not supported: Timeout occurred while gathering data.
+2026/10/03 06:48:10.814935 detected 11 time difference between queue checks, rescheduling tasks
+2026/10/03 06:48:10.855196 [101] connection closed
+2026/10/03 06:48:10.856196 [101] active check configuration update from host [pdc] started to fail
+2026/10/03 06:48:42.291030 check 'wmi.getall[root\cimv2,"select Name,Description,NetConnectionID,Speed,AdapterTypeId,NetConnectionStatus,GUID from win32_networkadapter where PhysicalAdapter=True and NetConnectionStatus>0"]' is not supported: Timeout occurred while gathering data.
+2026/10/03 06:48:50.604229 check 'system.uname' is not supported: Timeout occurred while gathering data.
+2026/10/03 06:49:11.855380 check 'perf_counter_en["\Memory\Free System Page Table Entries"]' is not supported: Timeout occurred while gathering data.
+2026/10/03 06:49:21.785127 check 'service.info["WinDefend",state]' is not supported: Timeout occurred while gathering data.
+2026/10/03 06:49:26.189800 check 'perf_counter_en["\Memory\Pool Nonpaged Bytes"]' is not supported: Timeout occurred while gathering data.
+2026/10/03 06:49:26.262101 check 'service.info["UALSVC",state]' is not supported: Timeout occurred while gathering data.
+2026/10/03 06:49:26.273354 check 'service.info["UserManager",state]' is not supported: Timeout occurred while gathering data.
+2026/10/03 06:49:26.275865 check 'perf_counter_en["\Memory\Page Faults/sec"]' is not supported: Timeout occurred while gathering data.
+2026/10/03 06:49:26.275865 check 'service.info["UsoSvc",state]' is not supported: Timeout occurred while gathering data.
+2026/10/03 06:49:26.275865 check 'service.info["W32Time",state]' is not supported: Timeout occurred while gathering data.
+2026/10/03 06:49:26.275865 check 'service.info["Wcmsvc",state]' is not supported: Timeout occurred while gathering data.
+2026/10/03 06:49:26.275865 check 'wmi.get[root/cimv2,"Select NumberOfLogicalProcessors from Win32_ComputerSystem"]' is not supported: Timeout occurred while gathering data.
+2026/10/03 06:49:26.275865 check 'perf_counter_en["\Memory\Cache Bytes"]' is not supported: Timeout occurred while gathering data.
+2026/10/03 06:49:26.275865 [101] connection closed
+2026/10/03 06:49:26.275865 [101] history upload to [10.1.7.20:10051] [pdc] started to fail
+2026/10/03 06:49:26.275865 check 'perf_counter_en["\PhysicalDisk(1 D:)\Avg. Disk Read Queue Length",60]' is not supported: Timeout occurred while gathering data.
+2026/10/03 06:49:26.275865 check 'system.uptime' is not supported: Timeout occurred while gathering data.
+2026/10/03 06:49:26.275865 check 'service.info["WindowsAzureGuestAgent",state]' is not supported: Timeout occurred while gathering data.
+2026/10/03 06:49:26.275865 check 'service.info["Winmgmt",state]' is not supported: Timeout occurred while gathering data.
+2026/10/03 06:49:26.275865 check 'service.info["WinRM",state]' is not supported: Timeout occurred while gathering data.
+2026/10/03 06:49:26.275865 check 'service.info["MDCoreSvc",state]' is not supported: Timeout occurred while gathering data.
+2026/10/03 06:49:26.275865 check 'service.info["WpnService",state]' is not supported: Timeout occurred while gathering data.
+2026/10/03 06:49:26.275865 check 'service.info["Zabbix Agent 2",state]' is not supported: Timeout occurred while gathering data.
+2026/10/03 06:49:26.275865 check 'perf_counter_en["\PhysicalDisk(1 D:)\% Idle Time",60]' is not supported: Timeout occurred while gathering data.
+2026/10/03 06:49:26.307950 [101] history upload to [10.1.7.20:10051] [pdc] is working again
+2026/10/03 06:49:36.640261 check 'service.info["DispBrokerDesktopSvc",state]' is not supported: Timeout occurred while gathering data.
+2026/10/03 06:49:38.129201 [101] connection closed
+2026/10/03 06:49:38.129201 [101] history upload to [10.1.7.20:10051] [pdc] started to fail
+2026/10/03 06:49:40.812155 [101] history upload to [10.1.7.20:10051] [pdc] is working again
+2026/10/03 06:49:42.828112 check 'wmi.getall[root\cimv2,"select Name,Description,NetConnectionID,Speed,AdapterTypeId,NetConnectionStatus,GUID from win32_networkadapter where PhysicalAdapter=True and NetConnectionStatus>0"]' is not supported: Timeout occurred while gathering data.
+2026/10/03 06:49:52.067043 check 'system.uptime' is not supported: Timeout occurred while gathering data.
+2026/10/03 06:50:27.356474 [101] active check configuration update from [10.1.7.20:10051] is working again
+2026/10/03 06:51:44.846109 check 'wmi.getall[root\cimv2,"select Name,Description,NetConnectionID,Speed,AdapterTypeId,NetConnectionStatus,GUID from win32_networkadapter where PhysicalAdapter=True and NetConnectionStatus>0"]' is not supported: Timeout occurred while gathering data.
+2026/10/03 06:52:35.933104 [101] connection closed
+2026/10/03 06:52:35.933104 [101] history upload to [10.1.7.20:10051] [pdc] started to fail
+2026/10/03 06:52:37.491204 [101] history upload to [10.1.7.20:10051] [pdc] is working again
+2026/10/03 06:52:53.557207 check 'system.uptime' is not supported: Timeout occurred while gathering data.
+2026/10/03 06:53:17.308194 detected 23 time difference between queue checks, rescheduling tasks
+2026/10/03 06:53:17.308194 [101] connection closed
+2026/10/03 06:53:17.308194 [101] history upload to [10.1.7.20:10051] [pdc] started to fail
+2026/10/03 06:53:17.338321 [101] history upload to [10.1.7.20:10051] [pdc] is working again

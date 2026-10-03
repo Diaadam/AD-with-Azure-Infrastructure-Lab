@@ -37,7 +37,7 @@ src_img_ref = {
 src_img_ref_zabbix = {
   publisher = "Canonical"
   offer     = "0001-com-ubuntu-server-jammy"
-  sku       = "22_04-lts"# for a, d series quotas -gen2"
+  sku       = "22_04-lts" # for a, d series quotas -gen2"
   version   = "latest"
 }
 

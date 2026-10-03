@@ -23,6 +23,7 @@ locals {
   zabbix_custom_data           = base64encode(file("../../scripts/zabbix-settup.yaml"))
   zabbix_os_profile            = merge(var.os_profile, { custom_data = local.zabbix_custom_data })
   zabbix_agent_version         = "7.0.26"
+  zabbix_server_ip             = "10.1.7.20"
 }
 
 
@@ -109,7 +110,7 @@ module "GizaChild" {
   size                             = "Standard_A1_v2"
   os_profile                       = merge(local.vm_os_profile, { computer_name = var.compute_name_Child_2 })
   ssh_public_key_path              = var.ssh_public_key_path
-  src_img_ref                      = merge(var.src_img_ref, {sku = "2022-datacenter"})
+  src_img_ref                      = merge(var.src_img_ref, { sku = "2022-datacenter" })
   storage_os_disk                  = merge(var.storage_os_disk, { name = "${var.compute_name_Child_2}-osdisk" })
   subnet_id                        = module.networking["labVnet"].subnet_ids["Giza"]
   Dynamic_private_ip_address_alloc = var.Dynamic_private_ip_address_alloc
@@ -134,9 +135,9 @@ module "zabbix_server" {
   Dynamic_private_ip_address_alloc = var.Dynamic_private_ip_address_alloc
   private_ip_address               = var.private_ip_zabbix
   # public_ip         = "${var.compute_name_zabbix}pip"
-  nic_name = "${var.compute_name_zabbix}nic"
-  tags     = var.tags
-  depends_on = [ module.GizaChild ]
+  nic_name   = "${var.compute_name_zabbix}nic"
+  tags       = var.tags
+  depends_on = [module.GizaChild]
 }
 
 #############################################################
@@ -170,116 +171,28 @@ resource "azurerm_virtual_machine_run_command" "zabbix_agent_install" {
   virtual_machine_id = each.value
   location           = module.resource_group.location
 
-source {
-    script = <<-EOT
-      $ErrorActionPreference = "Stop"
-      try {
-        [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
-        $version = "${local.zabbix_agent_version}"
-        $msiPath = "C:\zabbix_agent2.msi"
-        $url = "https://cdn.zabbix.com/zabbix/binaries/stable/7.0/$version/zabbix_agent2-$version-windows-amd64-openssl.msi"
-
-        Invoke-WebRequest -Uri $url -OutFile $msiPath -UseBasicParsing
-
-        $msiArgs = '/i', $msiPath, '/qn', '/norestart', 'SERVER=10.1.7.20', 'SERVERACTIVE=10.1.7.20', 'ENABLEPATH=1'
-        $process = Start-Process msiexec.exe -ArgumentList $msiArgs -Wait -PassThru
-        if ($process.ExitCode -ne 0) { throw "msiexec exited $($process.ExitCode)" }
-
-        New-NetFirewallRule -DisplayName 'Zabbix Agent' -Direction Inbound -LocalPort 10050 -Protocol TCP -Action Allow -ErrorAction SilentlyContinue
-        Start-Service 'Zabbix Agent 2'
-
-        "Installation completed with exit code: $($process.ExitCode)" | Out-File "C:\zabbix_install.log"
-      } catch {
-        $_ | Out-File "C:\zabbix_install_error.log"
-        throw
-      }
-    EOT
+  source {
+    script = templatefile("${path.module}/../../scripts/install-zabbix-agent.ps1", {
+      zabbix_agent_version = local.zabbix_agent_version
+      zabbix_server_ip     = local.zabbix_server_ip
+    })
   }
 }
 
-# resource "azurerm_virtual_machine_extension" "ad_domain_srv_install_adds" {
-#   for_each = {
-#     PDC           = module.PDC.vm_id
-#     ADC           = module.ADC.vm_id
-#     RODC          = module.RODC.vm_id
-#     NasrCityChild = module.NasrCityChild.vm_id
-#     GizaChild     = module.GizaChild.vm_id
-#   }
+resource "azurerm_virtual_machine_run_command" "ad_domain_srv_install_adds" {
+  for_each = {
+    PDC           = module.PDC.vm_id
+    ADC           = module.ADC.vm_id
+    RODC          = module.RODC.vm_id
+    NasrCityChild = module.NasrCityChild.vm_id
+    GizaChild     = module.GizaChild.vm_id
+  }
 
-#   name                 = "install-adds-role"
-#   virtual_machine_id   = each.value
-#   publisher            = "Microsoft.Compute"
-#   type                 = "CustomScriptExtension"
-#   type_handler_version = "1.10"
+  name               = "install-adds-role"
+  virtual_machine_id = each.value
+  location           = module.resource_group.location
 
-#   settings = jsonencode({
-#     commandToExecute = "powershell.exe -ExecutionPolicy Unrestricted -Command \"Install-WindowsFeature -Name AD-Domain-Services -IncludeManagementTools\""
-#   })
-# }
-resource "azurerm_virtual_machine_extension" "child_2_AD-Domain-srv_install_adds" {
-  name                 = "install-adds-role"
-  virtual_machine_id   = module.GizaChild.vm_id # Ensure this matches your VM resource name in the module
-  publisher            = "Microsoft.Compute"
-  type                 = "CustomScriptExtension"
-  type_handler_version = "1.10"
-
-
-  settings = <<SETTINGS
-    {
-      "commandToExecute": "powershell.exe -ExecutionPolicy Unrestricted -Command \"Install-WindowsFeature -Name AD-Domain-Services -IncludeManagementTools\""
-    }
-  SETTINGS
-}
-resource "azurerm_virtual_machine_extension" "child_AD-Domain-srv_install_adds" {
-  name                 = "install-adds-role"
-  virtual_machine_id   = module.NasrCityChild.vm_id # Ensure this matches your VM resource name in the module
-  publisher            = "Microsoft.Compute"
-  type                 = "CustomScriptExtension"
-  type_handler_version = "1.10"
-
-
-  settings = <<SETTINGS
-    {
-      "commandToExecute": "powershell.exe -ExecutionPolicy Unrestricted -Command \"Install-WindowsFeature -Name AD-Domain-Services -IncludeManagementTools\""
-    }
-  SETTINGS
-}
-resource "azurerm_virtual_machine_extension" "PDC_AD_Domain_srv_install_adds" {
-  name                 = "install-adds-role"
-  virtual_machine_id   = module.PDC.vm_id # Ensure this matches your VM resource name in the module
-  publisher            = "Microsoft.Compute"
-  type                 = "CustomScriptExtension"
-  type_handler_version = "1.10"
-
-  settings = <<SETTINGS
-    {
-      "commandToExecute": "powershell.exe -ExecutionPolicy Unrestricted -Command \"Install-WindowsFeature -Name AD-Domain-Services -IncludeManagementTools\""
-    }
-  SETTINGS
-}
-resource "azurerm_virtual_machine_extension" "ADC_AD_Domain_srv_install_adds" {
-  name                 = "install-adds-role"
-  virtual_machine_id   = module.ADC.vm_id # Ensure this matches your VM resource name in the module
-  publisher            = "Microsoft.Compute"
-  type                 = "CustomScriptExtension"
-  type_handler_version = "1.10"
-
-  settings = <<SETTINGS
-    {
-      "commandToExecute": "powershell.exe -ExecutionPolicy Unrestricted -Command \"Install-WindowsFeature -Name AD-Domain-Services -IncludeManagementTools\""
-    }
-  SETTINGS
-}
-resource "azurerm_virtual_machine_extension" "RODC_AD_Domain_srv_install_adds" {
-  name                 = "install-adds-role"
-  virtual_machine_id   = module.RODC.vm_id # Ensure this matches your VM resource name in the module
-  publisher            = "Microsoft.Compute"
-  type                 = "CustomScriptExtension"
-  type_handler_version = "1.10"
-
-  settings = <<SETTINGS
-    {
-      "commandToExecute": "powershell.exe -ExecutionPolicy Unrestricted -Command \"Install-WindowsFeature -Name AD-Domain-Services -IncludeManagementTools\""
-    }
-  SETTINGS
+  source {
+    script = "Install-WindowsFeature -Name AD-Domain-Services -IncludeManagementTools"
+  }
 }

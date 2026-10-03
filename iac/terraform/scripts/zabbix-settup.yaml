@@ -11,23 +11,44 @@ packages:
   - postgresql-contrib
 
 runcmd:
-  # 1. Detect Ubuntu Codename (jammy / noble) and install Zabbix repository
   - export DEBIAN_FRONTEND=noninteractive
-  - UBUNTU_CODENAME=$(lsb_release -sc)
-  - wget "https://repo.zabbix.com/zabbix/7.0/ubuntu/pool/main/z/zabbix-release/zabbix-release_7.0-1+ubuntu${UBUNTU_CODENAME}_all.deb" -O /tmp/zabbix-release.deb
-  - dpkg -i /tmp/zabbix-release.deb
-  - apt-get update
+
+  # 0. Don't proceed until we can actually reach the repo (fixes the
+  #    first-boot-before-network-is-ready failure).
+  - |
+    for i in $(seq 1 30); do
+      curl -sSf https://repo.zabbix.com > /dev/null 2>&1 && break
+      sleep 5
+    done
+
+  # 1. Add the Zabbix repo using the numeric Ubuntu version (22.04, 24.04...),
+  #    not the codename (jammy/noble) — the old codename-based filenames
+  #    don't exist anymore, which is why zabbix-server-pgsql was resolving
+  #    to Ubuntu's stale 5.0.17 package instead of the real Zabbix 7.0 repo.
+  - |
+    UBUNTU_VERSION=$(lsb_release -sr)
+    wget "https://repo.zabbix.com/zabbix/7.0/ubuntu/pool/main/z/zabbix-release/zabbix-release_latest_7.0+ubuntu${UBUNTU_VERSION}_all.deb" -O /tmp/zabbix-release.deb
+    dpkg -i /tmp/zabbix-release.deb
+    apt-get update
 
   # 2. Install Zabbix server, web frontend (Nginx + PHP), and Zabbix agent 2
   - apt-get install -y zabbix-server-pgsql zabbix-frontend-php php-pgsql zabbix-nginx-conf zabbix-sql-scripts zabbix-agent2
 
-  # 3. Setup PostgreSQL database and user
-  - sudo -u postgres psql -c "CREATE USER zabbix WITH ENCRYPTED PASSWORD 'ZabbixStrongPass123!';"
-  - sudo -u postgres psql -c "CREATE DATABASE zabbix OWNER zabbix;"
-  - sudo -u postgres psql -c "ALTER SCHEMA public OWNER TO zabbix;"
+  # 3. Set up the PostgreSQL role and database — idempotent, so a
+  #    cloud-init clean --reboot won't fail on "already exists"
+  - |
+    sudo -u postgres psql -tc "SELECT 1 FROM pg_roles WHERE rolname='zabbix'" | grep -q 1 \
+      || sudo -u postgres psql -c "CREATE USER zabbix WITH ENCRYPTED PASSWORD 'ZabbixStrongPass123!';"
+    sudo -u postgres psql -tc "SELECT 1 FROM pg_database WHERE datname='zabbix'" | grep -q 1 \
+      || sudo -u postgres psql -c "CREATE DATABASE zabbix OWNER zabbix;"
+    sudo -u postgres psql -d zabbix -c "ALTER SCHEMA public OWNER TO zabbix;"
 
-  # 4. Import initial schema and data
-  - zcat /usr/share/zabbix-sql-scripts/postgresql/server.sql.gz | sudo -u zabbix psql zabbix
+  # 4. Import the initial schema — only if it hasn't been imported yet
+  - |
+    TABLE_COUNT=$(sudo -u postgres psql -d zabbix -tc "SELECT count(*) FROM information_schema.tables WHERE table_schema='public'")
+    if [ "$TABLE_COUNT" -eq 0 ]; then
+      zcat /usr/share/zabbix-sql-scripts/postgresql/server.sql.gz | sudo -u zabbix psql zabbix
+    fi
 
   # 5. Configure Zabbix Server database password
   - sed -i 's/# DBPassword=/DBPassword=ZabbixStrongPass123!/g' /etc/zabbix/zabbix_server.conf
@@ -37,6 +58,10 @@ runcmd:
   - sed -i 's/#        server_name     example.com;/        server_name     _;/g' /etc/zabbix/nginx.conf
   - rm -f /etc/nginx/sites-enabled/default
 
-  # 7. Start and enable all services
-  - systemctl restart zabbix-server zabbix-agent2 nginx php*-fpm
-  - systemctl enable zabbix-server zabbix-agent2 nginx postgresql
+  # 7. Start and enable all services — resolve the actual php-fpm unit name
+  #    instead of relying on a shell glob (php*-fpm), which never expands
+  #    to a systemd unit and fails silently.
+  - |
+    PHP_FPM_SERVICE=$(systemctl list-unit-files --type=service | grep -oP 'php[0-9.]+-fpm(?=\.service)' | head -1)
+    systemctl restart zabbix-server zabbix-agent2 nginx "${PHP_FPM_SERVICE}"
+    systemctl enable zabbix-server zabbix-agent2 nginx postgresql "${PHP_FPM_SERVICE}"

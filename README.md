@@ -1,73 +1,74 @@
 # Enterprise Hybrid AD with Azure Infrastructure Lab
 
-A repeatable Azure lab for designing and validating hybrid Active Directory infrastructure with Terraform. The repository keeps infrastructure code, operational notes, and CI/CD definitions together.
+## Overview
+This project deploys a complete Enterprise Multi-Site Active Directory and Zabbix monitoring infrastructure on Microsoft Azure using Terraform. The infrastructure is defined as code (IaC) to ensure a reproducible, scalable, and automated environment for testing and lab purposes.
 
-## Definition of done
+## Infrastructure Architecture (Terraform)
 
-- Terraform is formatted and validates for each environment.
-- A resource group, virtual network, subnet, NSG, and optional Ubuntu Zabbix monitoring VM can be planned from Terraform.
-- Remote state configuration is documented and can be enabled without changing module code.
-- Architecture decisions and troubleshooting history are recorded.
-- CI runs formatting, validation, and security checks on pull requests.
-- CD publishes an artifact and records the intended GitOps tag update.
+The Terraform configuration, located in the `iac/terraform` directory, automatically provisions the following resources in Azure:
 
-## Repository layout
+### 1. Resource Group
+A dedicated Azure Resource Group is created to logically group all the infrastructure components.
 
-- `docs/architecture.md` - design decisions and system diagram.
-- `troubleshooting.md` - issue log and fixes.
-- `iac/terraform/modules` - reusable Terraform modules.
-- `iac/terraform/environments` - environment-specific composition and values.
-- `.github/workflows` - CI and CD automation.
+### 2. Networking
+- **Virtual Networks (VNETs) & Subnets**: Dedicated VNETs and subnets are provisioned for isolating the different components of the architecture (e.g., PDC, ADC, RODC, Child domains, and Zabbix).
+- **NAT Gateway**: A NAT Gateway (`lab-nat-gw`) is deployed and associated with all the internal subnets to allow outbound internet connectivity for the virtual machines without assigning public IP addresses to them directly.
+
+### 3. Compute Resources (Virtual Machines)
+The following Virtual Machines are deployed using custom modules:
+- **PDC**: Primary Domain Controller (Root Domain).
+- **ADC**: Additional Domain Controller for redundancy.
+- **RODC**: Read-Only Domain Controller for a simulated branch office.
+- **NasrCityChild**: Child Domain Controller (Nasr City branch).
+- **GizaChild**: Child Domain Controller (Giza branch).
+- **Zabbix Server**: A dedicated Ubuntu Linux VM for network and server monitoring.
+
+### 4. Automated Post-Deployment Configuration
+Terraform utilizes `azurerm_virtual_machine_run_command` and `custom_data` to automate initial guest OS configurations:
+- **Zabbix Agent Installation**: A PowerShell script (`install-zabbix-agent.ps1`) is automatically executed on all Windows Server nodes to install and configure the Zabbix agent, pointing back to the central Zabbix Server IP.
+- **Active Directory Role**: The `AD-Domain-Services` Windows Feature is automatically installed on all Windows VMs via a PowerShell run command.
 
 ## Prerequisites
+- [Terraform](https://developer.hashicorp.com/terraform/downloads) installed locally (version 1.x or later).
+- [Azure CLI](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli) installed and authenticated (`az login`).
+- Sufficient Azure Subscription permissions (Contributor).
 
-- Terraform >= 1.6
-- Azure CLI >= 2.50
-- An authenticated Azure subscription
-- GNU Make, or equivalent commands from the `Makefile`
+## Usage (Provisioning the Infrastructure)
 
-## Quick start
+1. Navigate to the dev environment directory:
+   ```bash
+   cd iac/terraform/environments/dev
+   ```
 
-```bash
-az login
-az account set --subscription <subscription-id>
-make init ENV=dev
-make validate ENV=dev
-make plan ENV=dev
-```
+2. Initialize Terraform to download providers and modules:
+   ```bash
+   terraform init
+   ```
 
-Apply only after reviewing the plan:
+3. Review the infrastructure plan:
+   ```bash
+   terraform plan
+   ```
 
-```bash
-make apply ENV=dev
-```
+4. Apply the configuration to provision the resources:
+   ```bash
+   terraform apply
+   ```
 
-The default configuration creates a lab resource group and network. The compute module is disabled by default until an SSH public key is supplied. The monitoring target is Zabbix Server on Ubuntu; Zabbix package installation, database setup, and agent enrollment remain a configuration step after the VM is provisioned.
+5. When you are done with the lab, you can tear down the infrastructure to save costs:
+   ```bash
+   terraform destroy
+   ```
 
-## State
+## Manual Configurations
 
-The checked-in `backend.tf` documents the Azure Storage remote backend. Supply backend configuration at initialization time, for example:
+While Terraform provisions the underlying network, virtual machines, and basic Windows roles, the logical Active Directory configuration and advanced Zabbix dashboard setups are performed manually. 
 
-```bash
-terraform -chdir=iac/terraform/environments/dev init \
-  -backend-config="resource_group_name=<state-resource-group>" \
-  -backend-config="storage_account_name=<state-storage-account>" \
-  -backend-config="container_name=tfstate" \
-  -backend-config="key=hybrid-ad/dev.tfstate"
-```
+For complete step-by-step instructions on:
+- Promoting the PDC, ADC, and RODC to Domain Controllers.
+- Configuring the Child Domains (Nasr City & Giza).
+- Establishing Active Directory Site and Services (Subnet mapping, Site Links).
+- Configuring the Zabbix Server frontend, adding hosts, and setting up triggers.
 
-Do not commit credentials, state files, plans, or SSH private keys.
-
-## Common commands
-
-```bash
-make fmt
-make validate ENV=dev
-make plan ENV=dev
-make apply ENV=dev
-make destroy ENV=dev
-make lint
-make test
-```
-
-This is a lab scaffold: domain controller promotion, DNS conditional forwarding, VPN/ExpressRoute, Zabbix package/database configuration, Zabbix agent enrollment, and production policies are intentionally documented as follow-up work rather than silently implied by the base network.
+Please refer to the comprehensive manual documentation provided in this repository:
+**[`MultiSite_AD_Zabbix_Documentation final.docx`](./MultiSite_AD_Zabbix_Documentation%20final.docx)**

@@ -1,0 +1,52 @@
+# 1. Create the Security Group for the Domain Controllers[cite: 1]
+New-ADGroup -Name "Zabbix-Agent-Servers" -GroupCategory Security -GroupScope Global
+
+# 2. Add your DCs to this new security group[cite: 1]
+# Note: Computer accounts must end with a "$"
+Add-ADGroupMember -Identity "Zabbix-Agent-Servers" -Members "pdc$","adc$","rodc$","child1$","child2$"
+
+# 3. Create the gMSA and grant password retrieval rights to the group
+# Replace "yourdomain.com" with your actual Active Directory domain name
+# if error : New-ADServiceAccount : Key does not exist
+# Add-KdsRootKey -EffectiveTime ((Get-Date).AddHours(-10))
+# 
+New-ADServiceAccount -Name "zabbix" -DNSHostName "zabbix.diaa.local" -PrincipalsAllowedToRetrieveManagedPassword "Zabbix-Agent-Servers"
+
+# 4. Add the new gMSA to the prebuilt monitoring groups
+# Note: Service accounts also must end with a "$" when added to groups[cite: 1]
+Add-ADGroupMember -Identity "Performance Monitor Users" -Members "zabbix$"
+Add-ADGroupMember -Identity "Event Log Readers" -Members "zabbix$"
+
+---------------------------------------------
+# on every dc install it
+# Install-ADServiceAccount -Identity zabbix 
+
+# if error >> "Access Denied" error again
+# The computer doesn't know it's in the group yet:
+klist purge -li 0x3e7 
+# then reinstall it
+Install-ADServiceAccount -Identity zabbix 
+----------------------------------------------
+# configure the "Zabbix Agent 2" service to run as your new gMSA.
+
+sc.exe config "Zabbix Agent 2" obj= "diaa\zabbix$"
+------------------------------------------------
+# 1. Define your account and the target folder
+$account = "diaa\zabbix$" 
+$targetFolder = "C:\Program Files\Zabbix Agent 2"
+
+# 2. Get the current permissions (ACL) of the folder
+$acl = Get-Acl -Path $targetFolder
+
+# 3. Create the new access rule 
+$accessRule = New-Object System.Security.AccessControl.FileSystemAccessRule($account, "Modify", "ContainerInherit,ObjectInherit", "None", "Allow")
+
+# 4. Add the rule and apply it to the folder
+$acl.AddAccessRule($accessRule)
+Set-Acl -Path $targetFolder -AclObject $acl
+------------------------------------------------
+# after giving zabbix access to 
+# $account = "diaa\zabbix$" 
+# $targetFolder = "C:\Program Files\Zabbix Agent 2"
+
+Restart-Service "Zabbix Agent 2"
