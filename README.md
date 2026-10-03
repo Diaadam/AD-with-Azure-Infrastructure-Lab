@@ -71,4 +71,4 @@ For complete step-by-step instructions on:
 - Configuring the Zabbix Server frontend, adding hosts, and setting up triggers.
 
 Please refer to the comprehensive manual documentation provided in this repository:
-**[`MultiSite_AD_Zabbix_Documentation final.docx`](./MultiSite_AD_Zabbix_Documentation%20final.docx)**
+**[`MultiSite_AD_Zabbix_Documentation final.docx`](./docs/MultiSite_AD_Zabbix_Documentation%20final.docx)**
