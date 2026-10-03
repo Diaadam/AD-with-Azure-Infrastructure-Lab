@@ -1,7 +1,7 @@
-# Enterprise Hybrid AD with Azure Infrastructure Lab
+# AD with Azure Infrastructure Lab
 
 ## Overview
-This project deploys a complete Enterprise Multi-Site Active Directory and Zabbix monitoring infrastructure on Microsoft Azure using Terraform. The infrastructure is defined as code (IaC) to ensure a reproducible, scalable, and automated environment for testing and lab purposes.
+This project deploys a complete  Multi-Site Active Directory and Zabbix monitoring infrastructure on Microsoft Azure using Terraform. The infrastructure is defined as code (IaC) to ensure a reproducible, scalable, and automated environment for testing and lab purposes.
 
 ## Infrastructure Architecture (Terraform)
 
